@@ -1,0 +1,12 @@
+# ========================================
+# News Curator が必要とするPythonパッケージ一覧
+#
+# インストール方法:
+#   pip install -r requirements.txt
+# ========================================
+
+feedparser==6.0.11           # RSSフィードを解析するライブラリ
+google-generativeai==0.8.3   # Google Gemini APIの公式SDK
+pyyaml==6.0.2                # YAML設定ファイルを読み込むライブラリ
+requests==2.32.3             # HTTPリクエストを送るライブラリ
+python-dotenv==1.0.1         # .envファイルから環境変数を読み込むライブラリ

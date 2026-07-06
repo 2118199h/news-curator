@@ -1,0 +1,250 @@
+/* ========================================
+   globals.css — サイト全体のスタイル定義
+   ========================================
+   ダッシュボード全体の見た目をここで定義する。
+   色・余白・文字サイズなどを変えたい場合はこのファイルを編集する。
+   ======================================== */
+
+/* --- 全要素共通のリセット --- */
+/* ブラウザのデフォルト余白を消して、見た目を統一する */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- ページ全体の基本設定 --- */
+body {
+  /* 日本語が読みやすいフォントを優先的に使う */
+  font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+  background-color: #f5f7fa;  /* 薄いグレーの背景 */
+  color: #1a202c;             /* 濃いグレーの文字 */
+  line-height: 1.6;           /* 行間を読みやすく */
+}
+
+/* --- ページのコンテンツ幅 --- */
+.container {
+  max-width: 900px;   /* 最大幅900px（広すぎると読みにくいため） */
+  margin: 0 auto;     /* 中央寄せ */
+  padding: 0 16px;    /* 左右に余白 */
+}
+
+/* ========================================
+   ヘッダー部分
+   ======================================== */
+.header {
+  background-color: #1e3a5f;  /* 濃い紺色 */
+  color: white;
+  padding: 24px 0;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.header .subtitle {
+  font-size: 13px;
+  opacity: 0.8;  /* 少し薄く表示 */
+}
+
+/* ========================================
+   カテゴリタブ
+   ======================================== */
+.tabs {
+  display: flex;        /* タブを横並びにする */
+  gap: 8px;             /* タブ同士の間隔 */
+  flex-wrap: wrap;      /* 画面が狭い時は折り返す */
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: 1px solid #cbd5e0;
+  border-radius: 20px;   /* 丸みを帯びたボタン */
+  background-color: white;
+  cursor: pointer;       /* マウスを乗せると指カーソルになる */
+  font-size: 14px;
+  transition: all 0.2s;  /* 色の変化を滑らかに */
+}
+
+.tab:hover {
+  background-color: #e2e8f0;  /* マウスを乗せた時に薄いグレー */
+}
+
+/* 選択中のタブのスタイル */
+.tab.active {
+  background-color: #1e3a5f;  /* 紺色 */
+  color: white;
+  border-color: #1e3a5f;
+}
+
+/* タブ内の記事数バッジ */
+.tab .count {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+
+/* ========================================
+   記事カード
+   ======================================== */
+.article-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  /* 関連度スコアに応じて左端の色が変わる（デフォルトはグレー） */
+  border-left: 4px solid #cbd5e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);  /* うっすら影をつける */
+}
+
+/* スコア5（必読）: 赤色の左枠 */
+.article-card.score-5 {
+  border-left-color: #e53e3e;
+}
+
+/* スコア4（重要）: オレンジ色の左枠 */
+.article-card.score-4 {
+  border-left-color: #ed8936;
+}
+
+/* スコア3（関連あり）: 青色の左枠 */
+.article-card.score-3 {
+  border-left-color: #3182ce;
+}
+
+/* 記事タイトルのリンク */
+.article-card h2 a {
+  font-size: 16px;
+  color: #1a202c;
+  text-decoration: none;  /* 下線を消す */
+}
+
+.article-card h2 a:hover {
+  color: #3182ce;          /* マウスを乗せると青色に */
+  text-decoration: underline;
+}
+
+/* 記事のメタ情報（配信元・日付） */
+.article-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 12px;
+  color: #718096;
+  margin: 6px 0;
+}
+
+/* 配信元バッジ */
+.source-badge {
+  background-color: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* スコアバッジ */
+.score-badge {
+  font-weight: bold;
+}
+
+.score-badge.score-5 { color: #e53e3e; }  /* 必読は赤 */
+.score-badge.score-4 { color: #ed8936; }  /* 重要はオレンジ */
+.score-badge.score-3 { color: #3182ce; }  /* 関連ありは青 */
+
+/* 記事の要約文 */
+.article-summary {
+  font-size: 14px;
+  color: #4a5568;
+  margin: 8px 0;
+  white-space: pre-line;  /* 改行をそのまま表示する */
+}
+
+/* キーワードタグ */
+.keywords {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.keyword-tag {
+  font-size: 11px;
+  background-color: #ebf4ff;
+  color: #2b6cb0;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ========================================
+   その他
+   ======================================== */
+/* 記事がない時のメッセージ */
+.empty-message {
+  text-align: center;
+  color: #718096;
+  padding: 48px 0;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #a0aec0;
+  padding: 24px 0;
+}
+
+/* ========================================
+   スマホ対応（レスポンシブデザイン）
+   ========================================
+   @media は「画面の幅が600px以下の時だけ適用する」という意味。
+   スマホで見た時に文字やボタンが小さくなりすぎないよう調整する。
+   ======================================== */
+@media (max-width: 600px) {
+
+  /* ヘッダーの余白と文字サイズを縮小 */
+  .header {
+    padding: 16px 0;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header .subtitle {
+    font-size: 11px;
+  }
+
+  /* タブを横スクロールできるようにする
+     （タブが多くても画面からはみ出さない） */
+  .tabs {
+    flex-wrap: nowrap;          /* 折り返さず1行に並べる */
+    overflow-x: auto;           /* はみ出た分は横スクロール */
+    -webkit-overflow-scrolling: touch;  /* iPhoneでなめらかにスクロール */
+    padding-bottom: 4px;
+  }
+
+  .tab {
+    white-space: nowrap;        /* タブ内で文字を折り返さない */
+    flex-shrink: 0;             /* タブが潰れないようにする */
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* 記事カードの余白を縮小 */
+  .article-card {
+    padding: 12px;
+  }
+
+  /* タイトルの文字サイズを少し縮小 */
+  .article-card h2 a {
+    font-size: 15px;
+  }
+
+  /* メタ情報が長い時は折り返す */
+  .article-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

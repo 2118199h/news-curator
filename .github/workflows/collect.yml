@@ -1,0 +1,108 @@
+# ========================================
+# collect.yml — GitHub Actions 定期実行設定
+# ========================================
+# GitHub Actions とは:
+#   GitHubが提供する無料の自動実行サービス。
+#   このファイルに書いたスケジュールで、クラウド上で
+#   Pythonスクリプトを自動実行してくれる。
+#
+# このワークフローの流れ:
+#   1. 毎日 朝7時・夜19時（日本時間）に自動起動
+#   2. ニュースを収集（main.py）
+#   3. JSONに書き出し（export_json.py）
+#   4. データベースの変更をリポジトリにコミット
+#   5. ダッシュボードをビルドしてGitHub Pagesに公開
+#
+# 事前準備（READMEに詳細あり）:
+#   - GitHubリポジトリの Settings → Secrets に GEMINI_API_KEY を登録
+#   - Settings → Pages で「GitHub Actions」をソースに設定
+# ========================================
+
+name: ニュース収集とダッシュボード更新
+
+on:
+  # 定期実行スケジュール（cron形式・UTC時間で指定）
+  # 日本時間 = UTC + 9時間 なので、
+  #   22:00 UTC = 翌朝 7:00 JST
+  #   10:00 UTC = 夜 19:00 JST
+  schedule:
+    - cron: "0 22 * * *"   # 毎朝7時（日本時間）
+    - cron: "0 10 * * *"   # 毎晩19時（日本時間）
+
+  # 手動実行も可能にする（GitHubの画面から「Run workflow」ボタンで実行できる）
+  workflow_dispatch:
+
+# ワークフローに与える権限
+permissions:
+  contents: write   # データベースファイルをコミットするため
+  pages: write      # GitHub Pagesにデプロイするため
+  id-token: write   # Pagesデプロイの認証のため
+
+jobs:
+  collect-and-deploy:
+    runs-on: ubuntu-latest   # Ubuntu Linux の仮想マシンで実行
+
+    steps:
+      # --- ステップ1: リポジトリのコードを取得 ---
+      - name: コードをチェックアウト
+        uses: actions/checkout@v4
+
+      # --- ステップ2: Python環境の準備 ---
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # --- ステップ3: Pythonパッケージのインストール ---
+      - name: 依存パッケージをインストール
+        run: pip install -r collector/requirements.txt
+
+      # --- ステップ4: ニュース収集の実行 ---
+      # GEMINI_API_KEY はリポジトリのSecretsから安全に渡される
+      - name: ニュースを収集
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        working-directory: collector
+        run: python main.py
+
+      # --- ステップ5: JSONファイルの書き出し ---
+      - name: 記事データをJSONに書き出し
+        working-directory: collector
+        run: python export_json.py
+
+      # --- ステップ6: データベースの変更をコミット ---
+      # 収集した記事を次回の実行でも使えるよう、リポジトリに保存する
+      - name: データベースをコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.db dashboard/public/data/articles.json -f
+          # 変更がある場合だけコミットする（変更なしでもエラーにしない）
+          git diff --staged --quiet || git commit -m "自動収集: $(date +'%Y-%m-%d %H:%M')"
+          git push
+
+      # --- ステップ7: Node.js環境の準備 ---
+      - name: Node.js 20 をセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # --- ステップ8: ダッシュボードのビルド ---
+      - name: ダッシュボードをビルド
+        working-directory: dashboard
+        run: |
+          npm install
+          npm run build
+
+      # --- ステップ9: GitHub Pagesへのデプロイ準備 ---
+      - name: Pages設定
+        uses: actions/configure-pages@v4
+
+      - name: ビルド結果をアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/out
+
+      # --- ステップ10: GitHub Pagesに公開 ---
+      - name: GitHub Pagesにデプロイ
+        uses: actions/deploy-pages@v4

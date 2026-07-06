@@ -1,0 +1,35 @@
+# ========================================
+# News Curator - Gitで管理しないファイル一覧
+# 注意: .gitignoreでは行末にコメントを書けないため、
+#       コメントは必ず独立した行に書くこと
+# ========================================
+
+# --- Python関連 ---
+# Pythonが自動生成するキャッシュ
+__pycache__/
+*.pyc
+# Python仮想環境
+.venv/
+venv/
+
+# --- 環境変数（APIキーなど秘密情報）---
+# ローカルの環境変数ファイル（APIキーが入っている）
+.env
+
+# --- データベース ---
+# SQLiteデータベース（毎回生成されるため）
+data/news.db
+
+# --- Node.js関連 ---
+# npmパッケージ（npm installで復元可能）
+node_modules/
+# Next.jsビルドキャッシュ
+dashboard/.next/
+# Next.js静的書き出し結果
+dashboard/out/
+
+# --- OS関連 ---
+# macOSが自動生成
+.DS_Store
+# Windowsが自動生成
+Thumbs.db

@@ -1,0 +1,251 @@
+# ========================================
+# News Curator 設定ファイル
+# ========================================
+# このファイルを編集するだけで、収集するニュースのカテゴリ・
+# キーワード・RSSフィードを自由に変更できます。
+#
+# 【カテゴリの追加方法】
+#   categories: の下に新しいカテゴリを追加するだけでOKです。
+#   例えば「半導体」カテゴリを追加したい場合：
+#
+#   semiconductor:
+#     display_name: "半導体"
+#     description: "半導体業界のニュース"
+#     feeds:
+#       - url: "https://example.com/rss"
+#         name: "情報源の名前"
+#     keywords:
+#       - "TSMC"
+#       - "半導体"
+#     gemini_prompt: "半導体業界に関するニュース"
+#
+# 【キーワードの変更方法】
+#   各カテゴリの keywords: リストを編集してください。
+#   キーワードに一致する記事だけが収集対象になります。
+#
+# 【英語ニュースについて】
+#   英語のRSSフィードもそのまま登録できます。
+#   AI要約は自動的に日本語に翻訳されて生成されます。
+#
+# 【今後カテゴリを増やす時の例】
+#   AI半導体:   keywords に "NVIDIA", "TSMC", "AMD", "Broadcom" など
+#   SaaS:       keywords に "Salesforce", "ServiceNow", "Workday" など
+#   エネルギー: keywords に "再生可能エネルギー", "原発", "データセンター電力" など
+#   → categories: の下にブロックを追加するだけで、タブも自動で増えます
+# ========================================
+
+categories:
+
+  # --------------------------------------------------
+  # カテゴリ1: 通信・キャリア
+  # 通信業界の競合企業に関するニュースを収集
+  # --------------------------------------------------
+  telecom:
+    display_name: "通信・キャリア"
+    description: "通信キャリアの競合企業に関するニュース"
+    feeds:
+      - url: "https://rss.itmedia.co.jp/rss/2.0/mobile.xml"
+        name: "ITmedia Mobile"
+      - url: "https://k-tai.watch.impress.co.jp/data/rss/1.0/ktw/feed.rdf"
+        name: "ケータイWatch"
+    # ↓ 追跡したい企業名・キーワードを自由に追加・削除してください
+    keywords:
+      - "NTTコミュニケーションズ"
+      - "NTTデータ"
+      - "NTTドコモ"
+      - "KDDI"
+      - "au"
+      - "ソフトバンク"
+      - "楽天モバイル"
+      - "IIJ"
+      - "5G"
+      - "通信障害"
+      - "基地局"
+    gemini_prompt: "通信キャリア・通信インフラ企業に関するビジネスニュース"
+
+  # --------------------------------------------------
+  # カテゴリ2: AI・クラウド
+  # AI技術とクラウドサービスの最新動向を収集
+  # --------------------------------------------------
+  ai_cloud:
+    display_name: "AI・クラウド"
+    description: "AI技術とクラウドサービスに関するニュース"
+    feeds:
+      - url: "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"
+        name: "ITmedia AI+"
+      - url: "https://cloud.watch.impress.co.jp/data/rss/1.0/clw/feed.rdf"
+        name: "クラウドWatch"
+    keywords:
+      - "生成AI"
+      - "LLM"
+      - "大規模言語モデル"
+      - "ChatGPT"
+      - "OpenAI"
+      - "Claude"
+      - "Anthropic"
+      - "Gemini"
+      - "AWS"
+      - "Azure"
+      - "Google Cloud"
+      - "GCP"
+      - "Oracle"
+      - "オラクル"
+      - "Snowflake"
+      - "Databricks"
+      - "CoreWeave"
+      - "Nebius"
+      - "ServiceNow"
+      - "機械学習"
+      - "ディープラーニング"
+      - "フィジカルAI"
+      - "Physical AI"
+      - "ヒューマノイド"
+      - "NVIDIA"
+      - "エヌビディア"
+    gemini_prompt: "AI技術・クラウドサービスの最新動向ニュース（技術発表・サービス開始・企業提携など）"
+
+  # --------------------------------------------------
+  # カテゴリ3: 投資・為替・市場
+  # マーケット情報と経済動向を収集
+  # --------------------------------------------------
+  market:
+    display_name: "投資・為替"
+    description: "投資・為替・市場動向に関するニュース"
+    feeds:
+      - url: "https://news.yahoo.co.jp/rss/topics/business.xml"
+        name: "Yahoo!ニュース ビジネス"
+      - url: "https://www3.nhk.or.jp/rss/news/cat5.xml"
+        name: "NHK 経済ニュース"
+    keywords:
+      - "日経平均"
+      - "TOPIX"
+      - "為替"
+      - "円安"
+      - "円高"
+      - "ドル円"
+      - "利上げ"
+      - "利下げ"
+      - "FRB"
+      - "日銀"
+      - "金融政策"
+      - "株価"
+      - "決算"
+      - "GDP"
+      - "インフレ"
+    gemini_prompt: "投資判断に役立つ市場・為替・経済政策ニュース（速報・分析記事を優先）"
+
+  # --------------------------------------------------
+  # カテゴリ4: M&A・東証
+  # 企業買収と証券取引所の動向を収集
+  # --------------------------------------------------
+  ma:
+    display_name: "M&A・東証"
+    description: "M&A・買収・東証規制に関するニュース"
+    feeds:
+      - url: "https://toyokeizai.net/list/feed/rss"
+        name: "東洋経済オンライン"
+      - url: "https://www3.nhk.or.jp/rss/news/cat5.xml"
+        name: "NHK 経済ニュース"
+    keywords:
+      - "M&A"
+      - "買収"
+      - "合併"
+      - "TOB"
+      - "出資"
+      - "公開買付"
+      - "東証"
+      - "上場廃止"
+      - "MBO"
+      - "株式公開買付"
+      - "企業統合"
+      - "デューデリジェンス"
+      - "バリュエーション"
+    gemini_prompt: "M&A・企業買収・東証の規制動向に関するニュース（案件情報・制度変更を優先）"
+
+  # --------------------------------------------------
+  # カテゴリ5: 注目企業
+  # 業界を問わず、追跡したい企業をここに登録する
+  # （通信系以外の企業も自由に追加できます）
+  # --------------------------------------------------
+  companies:
+    display_name: "注目企業"
+    description: "業界を問わず追跡している企業のニュース"
+    feeds:
+      - url: "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml"
+        name: "ITmedia NEWS"
+      - url: "https://www3.nhk.or.jp/rss/news/cat5.xml"
+        name: "NHK 経済ニュース"
+      - url: "https://techcrunch.com/feed/"
+        name: "TechCrunch"
+      - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
+        name: "CNBC Technology"
+    # ↓ 日本語・英語の両方の表記を入れておくと取りこぼしが減ります
+    keywords:
+      - "京セラ"
+      - "Kyocera"
+      - "NVIDIA"
+      - "Nvidia"
+      - "エヌビディア"
+      - "Anthropic"
+      - "アンソロピック"
+      - "OpenAI"
+      - "オープンAI"
+      - "Tesla"
+      - "テスラ"
+      - "SpaceX"
+      - "スペースX"
+    gemini_prompt: "特定の注目企業（京セラ・NVIDIA・Anthropic・OpenAI・Tesla・SpaceXなど）に関する事業・業績・技術ニュース"
+
+  # --------------------------------------------------
+  # カテゴリ6: 海外ニュース（米国）
+  # 英語の記事もAIが日本語で要約します
+  # --------------------------------------------------
+  us_news:
+    display_name: "海外（米国）"
+    description: "米国テック・経済の英語ニュース（日本語要約付き）"
+    feeds:
+      - url: "https://techcrunch.com/feed/"
+        name: "TechCrunch"
+      - url: "https://www.theverge.com/rss/index.xml"
+        name: "The Verge"
+      - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
+        name: "CNBC Technology"
+    # 英語の記事に含まれやすいキーワードで絞り込む
+    keywords:
+      - "OpenAI"
+      - "Anthropic"
+      - "Nvidia"
+      - "Tesla"
+      - "SpaceX"
+      - "Microsoft"
+      - "Google"
+      - "Amazon"
+      - "Apple"
+      - "Meta"
+      - "artificial intelligence"
+      - "AI model"
+      - "Physical AI"
+      - "robotics"
+      - "semiconductor"
+      - "data center"
+      - "cloud"
+      - "acquisition"
+      - "merger"
+      - "IPO"
+      - "Federal Reserve"
+    gemini_prompt: "米国のテクノロジー・AI・経済に関する重要ニュース（企業発表・市場動向・規制など）"
+
+# ========================================
+# Gemini API設定
+# ========================================
+gemini:
+  max_calls_per_run: 500         # 1回の実行あたりのAPI呼出上限（コスト管理用）
+  min_relevance_score: 3         # この値以上の記事だけ保存する（1〜5のスケール）
+  sleep_between_calls: 4.0       # API呼出の間隔（秒）。15回/分の制限を守るため
+
+# ========================================
+# その他の設定
+# ========================================
+general:
+  articles_retention_days: 14    # 記事を何日間保持するか
+  export_days: 7                 # ダッシュボードに表示する日数
