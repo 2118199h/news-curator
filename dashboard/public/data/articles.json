@@ -1,41 +1,47 @@
 {
-  "generated_at": "2026-07-06T15:24:52.966829",
-  "total_articles": 86,
+  "generated_at": "2026-07-07T00:36:00.434412",
+  "total_articles": 102,
   "categories": {
     "telecom": {
       "display_name": "通信・キャリア",
-      "description": "通信キャリアの競合企業に関するニュース"
+      "description": "通信キャリアの競合企業に関するニュース",
+      "language": "ja"
     },
     "ai_cloud": {
       "display_name": "AI・クラウド",
-      "description": "AI技術とクラウドサービスに関するニュース"
+      "description": "AI技術とクラウドサービスに関するニュース",
+      "language": "ja"
     },
     "market": {
       "display_name": "投資・為替",
-      "description": "投資・為替・市場動向に関するニュース"
+      "description": "投資・為替・市場動向に関するニュース",
+      "language": "ja"
     },
     "ma": {
       "display_name": "M&A・東証",
-      "description": "M&A・買収・東証規制に関するニュース"
+      "description": "M&A・買収・東証規制に関するニュース",
+      "language": "ja"
     },
     "companies": {
       "display_name": "注目企業",
-      "description": "業界を問わず追跡している企業のニュース"
+      "description": "業界を問わず追跡している企業のニュース",
+      "language": "ja"
     },
     "us_news": {
       "display_name": "海外（米国）",
-      "description": "米国テック・経済の英語ニュース（日本語要約付き）"
+      "description": "米国テック・経済の英語ニュース",
+      "language": "en"
     }
   },
   "articles": [
     {
-      "id": 67,
+      "id": 92,
       "title": "Microsoft lays off nearly 5,000 employees across Xbox, commercial sales",
       "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/",
       "source": "TechCrunch",
       "category": "us_news",
-      "published_at": "2026-07-06T15:08:46",
-      "fetched_at": "2026-07-06T15:24:52.820381",
+      "published_at": "2026-07-06T15:32:43",
+      "fetched_at": "2026-07-07T00:36:00.223476",
       "description": "Microsoft cut around 4,800 roles, or 2.1% of its global workforce, on Monday — the latest in a series of layoffs that’s stoking fears of AI replacing jobs. The layoffs will hit Xbox and commercial sales the hardest.",
       "relevance_score": 3,
       "summary": null,
@@ -44,7 +50,52 @@
       "filter_reason": null
     },
     {
-      "id": 59,
+      "id": 93,
+      "title": "Reddit is using LLMs to solve a problem LLMs largely created",
+      "url": "https://techcrunch.com/2026/07/06/reddit-is-using-llms-to-solve-a-problem-llms-largely-created/",
+      "source": "TechCrunch",
+      "category": "us_news",
+      "published_at": "2026-07-06T15:22:08",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "In the AI era, platforms have no choice but to fight fire with fire to cull spam.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 90,
+      "title": "au「TORQUE G07」レビュー、使い倒して分かった極限タフネスと自力パーツ交換の合理性",
+      "url": "https://k-tai.watch.impress.co.jp/docs/review/2121995.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-07-06T15:00:00",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "2026年3月18日より、京セラ製スマートフォン「TORQUE G07」がKDDI、沖縄セルラーで販売されている。au Online Shopでの販売価格は13万1800円。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 89,
+      "title": "[みんなのケータイ]さっそく「楽天モバイルWiFiスポット」につないできた",
+      "url": "https://k-tai.watch.impress.co.jp/docs/column/minna/2122812.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-07-06T15:00:00",
+      "fetched_at": "2026-07-07T00:36:00.221368",
+      "description": "楽天モバイルが6月19日、公衆Wi-Fiサービス「楽天モバイルWiFiスポット」の提供を開始しました。楽天モバイルユーザーである筆者は、さっそく翌日に「イオンモール木更津」へ。さくっとつないで体験してこようと思っていましたが、無事に開通するまでには少々振り回されることになりました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 62,
       "title": "SpaceX President Gwynne Shotwell to donate stock to Trump Accounts",
       "url": "https://www.cnbc.com/2026/07/06/spacex-spcx-gwynne-shotwell-stock-trump-accounts.html",
       "source": "CNBC Technology",
@@ -67,6 +118,21 @@
       "published_at": "2026-07-06T15:00:00",
       "fetched_at": "2026-07-06T15:24:52.819868",
       "description": "2026年3月18日より、京セラ製スマートフォン「TORQUE G07」がKDDI、沖縄セルラーで販売されている。au Online Shopでの販売価格は13万1800円。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 94,
+      "title": "Station F ramps up as a launchpad for Europe’s hottest AI startups",
+      "url": "https://techcrunch.com/2026/07/06/station-f-ramps-up-as-a-launchpad-for-europes-hottest-ai-startups/",
+      "source": "TechCrunch",
+      "category": "us_news",
+      "published_at": "2026-07-06T13:00:00",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Station F, a Paris-based startup hub founded by French billionaire Xavier Niel, is gearing up for a new edition of its F/ai accelerator program in a bid to strengthen its positioning as a stepping stone for promising AI startups.",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
@@ -479,7 +545,22 @@
       "filter_reason": null
     },
     {
-      "id": 70,
+      "id": 95,
+      "title": "Trump memecoin investors lost $3.8 billion, analysis finds",
+      "url": "https://techcrunch.com/2026/07/05/trump-memecoin-investors-lost-3-8-billion-analysis-finds/",
+      "source": "TechCrunch",
+      "category": "us_news",
+      "published_at": "2026-07-05T20:29:05",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Nearly 1 million people have lost a total of $3.8 billion after buying President Donald Trump’s $TRUMP memecoin, while Trump made $636 million.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 72,
       "title": "Amazon will stop accepting new customers for Mechanical Turk",
       "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/",
       "source": "TechCrunch",
@@ -509,7 +590,22 @@
       "filter_reason": null
     },
     {
-      "id": 71,
+      "id": 96,
+      "title": "What is Bending Spoons? The little-known AOL and Vimeo owner that’s now public",
+      "url": "https://techcrunch.com/2026/07/05/what-is-bending-spoons-everything-to-know-about-aols-acquirer/",
+      "source": "TechCrunch",
+      "category": "us_news",
+      "published_at": "2026-07-05T13:33:32",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Bending Spoons remains largely unknown, even as its portfolio of products has served more than a billion people.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 73,
       "title": "New Google commercial imagines a Declaration of Independence written with help from AI",
       "url": "https://techcrunch.com/2026/07/04/new-google-commercial-imagines-a-declaration-of-independence-written-with-help-from-ai/",
       "source": "TechCrunch",
@@ -524,7 +620,22 @@
       "filter_reason": null
     },
     {
-      "id": 58,
+      "id": 97,
+      "title": "Alibaba reportedly bans employees from using Claude Code",
+      "url": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
+      "source": "TechCrunch",
+      "category": "us_news",
+      "published_at": "2026-07-04T16:32:08",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Alibaba has reportedly classified Claude Code as high-risk software.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 61,
       "title": "What is Mistral AI? Everything to know about the OpenAI competitor",
       "url": "https://techcrunch.com/2026/07/04/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/",
       "source": "TechCrunch",
@@ -614,7 +725,22 @@
       "filter_reason": null
     },
     {
-      "id": 79,
+      "id": 98,
+      "title": "The hunt for AI's next winners defined the stock market's holiday-shortened week",
+      "url": "https://www.cnbc.com/2026/07/03/the-hunt-for-ais-next-winners-defined-the-stock-markets-holiday-shortened-week.html",
+      "source": "CNBC Technology",
+      "category": "us_news",
+      "published_at": "2026-07-03T15:51:06",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Wall Street kicked off the third quarter with mixed results after a blockbuster first half for stocks.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 81,
       "title": "The Tech Download: Amazon’s devices chief Panos Panay on tech giant's AI gadget push",
       "url": "https://www.cnbc.com/2026/07/03/the-tech-download-amazon-devices-chief-panos-panay.html",
       "source": "CNBC Technology",
@@ -637,6 +763,21 @@
       "published_at": "2026-07-03T12:12:20",
       "fetched_at": "2026-07-06T15:24:52.820085",
       "description": "3日の債券市場で、長期金利が一時、およそ29年ぶりの高い水準となる2.81％まで上昇しました。今後、インフレが加速するという見方や財政負担への懸念が広がったことなどから、国債を売る動きが強まりました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 99,
+      "title": "Trump’s Freedom 250 draws corporate sponsors with business before his administration",
+      "url": "https://www.cnbc.com/2026/07/03/trump-freedom-250-america250-corporate-sponsors-access.html",
+      "source": "CNBC Technology",
+      "category": "us_news",
+      "published_at": "2026-07-03T12:00:01",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Companies with federal interests — including Boeing, Lockheed Martin and Oracle — are sponsoring a Trump-aligned effort celebrating America’s 250th birthday.",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
@@ -959,7 +1100,22 @@
       "filter_reason": null
     },
     {
-      "id": 80,
+      "id": 100,
+      "title": "Autonomous drone startup Quantum Systems raises $1.2 billion as investors pile into defense",
+      "url": "https://www.cnbc.com/2026/07/02/autonomous-defense-startup-quantum-systems.html",
+      "source": "CNBC Technology",
+      "category": "us_news",
+      "published_at": "2026-07-02T15:13:11",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Defense tech startups are raising record amounts on both sides of the Atlantic amid a flurry of investment in the sector.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 82,
       "title": "Microsoft commits $2.5 billion and 6,000 employees to new AI implementation unit",
       "url": "https://www.cnbc.com/2026/07/02/microsoft-commits-2point5-billion-6000-employees-ai-implementation-unit.html",
       "source": "CNBC Technology",
@@ -1034,7 +1190,22 @@
       "filter_reason": null
     },
     {
-      "id": 54,
+      "id": 101,
+      "title": "AI agents will soon be able to match human traders, Robinhood CEO tells CNBC",
+      "url": "https://www.cnbc.com/2026/07/02/robinhood-ceo-ai-agents.html",
+      "source": "CNBC Technology",
+      "category": "us_news",
+      "published_at": "2026-07-02T10:51:06",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Vlad Tenev spoke about the potential of AI agents in trading in an interview with CNBC.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 57,
       "title": "日本生命、スペースX投資で莫大利益は本当か　総代会で質疑白熱　「未公開株」に積極姿勢",
       "url": "https://www.itmedia.co.jp/news/articles/2607/02/news106.html",
       "source": "ITmedia NEWS",
@@ -1057,6 +1228,21 @@
       "published_at": "2026-07-02T07:40:00",
       "fetched_at": "2026-07-06T15:24:52.820281",
       "description": "米AnthropicのAIモデル「Claude Fable 5」が世界的にサービスを再開した。Anthropicは復活に向けてどういった経緯と対策を行ったのか、モデル再開にあわせて詳細を公開した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 102,
+      "title": "Samsung Electronics, SK Hynix shares tumble over 9% as chip rout spreads from Wall Street",
+      "url": "https://www.cnbc.com/2026/07/02/samsung-sk-hynix-shares-slide-kospi-tech-selloff-nasdaq.html",
+      "source": "CNBC Technology",
+      "category": "us_news",
+      "published_at": "2026-07-02T07:25:40",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "Shares of Samsung Electronics and SK Hynix plummeted more than 7% in early Thursday trading.",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
@@ -1177,6 +1363,21 @@
       "published_at": "2026-07-01T07:28:43",
       "fetched_at": "2026-07-06T15:24:52.820148",
       "description": "1日の東京株式市場、半導体関連の銘柄を中心に買い注文が入って、日経平均株価は値上がりしました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 91,
+      "title": "きょうのおはBiz 7月1日(水) 記録的株高 新規上場企業の戦略は",
+      "url": "http://www3.nhk.or.jp/news/html/20260701/k10015165471000.html",
+      "source": "NHK 経済ニュース",
+      "category": "ma",
+      "published_at": "2026-07-01T03:13:16",
+      "fetched_at": "2026-07-07T00:36:00.223476",
+      "description": "NHKニュース「おはよう日本」で平日朝に放送している経済ニュースコーナー「おはBiz」。最新のビジネストレンドや働き方、お役立ちサービスやスタートアップ企業の情報など、ギュギュっとコンパクトにお届けします。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,

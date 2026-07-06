@@ -69,6 +69,7 @@ def get_gemini_settings(config):
     """
     # config に "gemini" キーがなければ、デフォルト値を返す
     return config.get("gemini", {
+        "enabled": True,
         "max_calls_per_run": 500,
         "min_relevance_score": 3,
         "sleep_between_calls": 4.0,

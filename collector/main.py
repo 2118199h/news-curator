@@ -106,17 +106,23 @@ def main():
         # ステップ5: Gemini APIで判定＋要約
         # ============================================
         # Geminiクライアントを準備（呼出上限・間隔は設定ファイルから）
-        # APIキーが未設定の場合は、AI判定をスキップして
-        # ルールベースフィルタを通過した記事をそのまま保存する
+        # 以下のどちらかの場合は、AI判定をスキップして
+        # ルールベースフィルタを通過した記事をそのまま保存する:
+        #   1. config.yaml で enabled: false になっている
+        #   2. APIキーが未設定・形式が不正
         gemini = None
-        try:
-            gemini = GeminiClient(
-                max_calls=gemini_settings["max_calls_per_run"],
-                sleep_seconds=gemini_settings["sleep_between_calls"],
-            )
-        except ValueError:
-            print("\n[警告] GEMINI_API_KEY が未設定のため、AI判定をスキップします")
-            print("[警告] キーワードフィルタを通過した記事をすべて保存します")
+        if not gemini_settings.get("enabled", True):
+            print("\n[情報] config.yaml で AI判定が無効（enabled: false）のためスキップします")
+            print("[情報] Gemini APIは一切呼び出されません")
+        else:
+            try:
+                gemini = GeminiClient(
+                    max_calls=gemini_settings["max_calls_per_run"],
+                    sleep_seconds=gemini_settings["sleep_between_calls"],
+                )
+            except ValueError:
+                print("\n[警告] GEMINI_API_KEY が未設定のため、AI判定をスキップします")
+                print("[警告] キーワードフィルタを通過した記事をすべて保存します")
 
         min_score = gemini_settings["min_relevance_score"]
 

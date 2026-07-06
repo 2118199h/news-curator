@@ -147,20 +147,50 @@ categories:
       - url: "https://www3.nhk.or.jp/rss/news/cat5.xml"
         name: "NHK 経済ニュース"
     keywords:
+      # --- M&A基本用語 ---
       - "M&A"
       - "買収"
       - "合併"
       - "TOB"
       - "出資"
       - "公開買付"
-      - "東証"
-      - "上場廃止"
-      - "MBO"
       - "株式公開買付"
       - "企業統合"
+      - "経営統合"
+      - "資本提携"
+      - "資本業務提携"
+      - "株式譲渡"
+      - "子会社化"
+      - "MBO"
+      - "LBO"
+      - "スクイーズアウト"
+      - "非公開化"
+      - "PMI"
+      # --- ファイナンス・企業価値評価 ---
       - "デューデリジェンス"
       - "バリュエーション"
-    gemini_prompt: "M&A・企業買収・東証の規制動向に関するニュース（案件情報・制度変更を優先）"
+      - "企業価値"
+      - "時価総額"
+      - "のれん"
+      - "第三者割当"
+      - "増資"
+      - "自社株買い"
+      - "株主還元"
+      - "PBR"
+      - "ROE"
+      # --- 東証・株主関連 ---
+      - "東証"
+      - "上場廃止"
+      - "新規上場"
+      - "IPO"
+      - "プライム市場"
+      - "スタンダード市場"
+      - "グロース市場"
+      - "アクティビスト"
+      - "物言う株主"
+      - "株主提案"
+      - "臨時株主総会"
+    gemini_prompt: "M&A・企業買収・コーポレートファイナンス・東証の規制動向に関するニュース（案件情報・制度変更を優先）"
 
   # --------------------------------------------------
   # カテゴリ5: 注目企業
@@ -202,7 +232,8 @@ categories:
   # --------------------------------------------------
   us_news:
     display_name: "海外（米国）"
-    description: "米国テック・経済の英語ニュース（日本語要約付き）"
+    description: "米国テック・経済の英語ニュース"
+    language: "en"    # ← このカテゴリは英語ニュース（ダッシュボードの画面切替に使う）
     feeds:
       - url: "https://techcrunch.com/feed/"
         name: "TechCrunch"
@@ -211,7 +242,10 @@ categories:
       - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
         name: "CNBC Technology"
     # 英語の記事に含まれやすいキーワードで絞り込む
+    # 【検索の仕組み】記事のタイトル＋概要文に、下のキーワードの
+    # どれか1つでも含まれていれば収集対象になる（大文字小文字は区別しない）
     keywords:
+      # --- 企業名 ---
       - "OpenAI"
       - "Anthropic"
       - "Nvidia"
@@ -222,23 +256,58 @@ categories:
       - "Amazon"
       - "Apple"
       - "Meta"
+      - "Oracle"
+      - "Snowflake"
+      - "Databricks"
+      - "CoreWeave"
+      - "ServiceNow"
+      - "Intel"
+      - "AMD"
+      - "TSMC"
+      - "Broadcom"
+      # --- AI・テクノロジー ---
       - "artificial intelligence"
       - "AI model"
+      - "AI chip"
+      - "AI agent"
+      - "ChatGPT"
+      - "Claude"
+      - "Gemini"
+      - "LLM"
+      - "GPU"
       - "Physical AI"
-      - "robotics"
+      - "robot"
+      - "humanoid"
+      - "autonomous"
+      - "self-driving"
       - "semiconductor"
+      - "chip"
       - "data center"
       - "cloud"
+      # --- ビジネス・マーケット ---
       - "acquisition"
+      - "acquire"
       - "merger"
       - "IPO"
+      - "funding"
+      - "valuation"
+      - "billion"
+      - "layoff"
+      - "earnings"
+      - "revenue"
+      - "stock"
+      - "Nasdaq"
+      - "S&P 500"
       - "Federal Reserve"
+      - "interest rate"
+      - "inflation"
     gemini_prompt: "米国のテクノロジー・AI・経済に関する重要ニュース（企業発表・市場動向・規制など）"
 
 # ========================================
 # Gemini API設定
 # ========================================
 gemini:
+  enabled: false                 # AI判定を使うか（APIキーを設定したら true に変更）
   max_calls_per_run: 500         # 1回の実行あたりのAPI呼出上限（コスト管理用）
   min_relevance_score: 3         # この値以上の記事だけ保存する（1〜5のスケール）
   sleep_between_calls: 4.0       # API呼出の間隔（秒）。15回/分の制限を守るため

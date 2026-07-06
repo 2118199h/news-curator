@@ -72,6 +72,9 @@ def export_articles():
         categories_info[category_id] = {
             "display_name": category_data.get("display_name", category_id),
             "description": category_data.get("description", ""),
+            # 言語（"ja" or "en"）。ダッシュボードの国内/海外の画面切替に使う
+            # config.yaml で language が未指定のカテゴリは日本語（ja）とみなす
+            "language": category_data.get("language", "ja"),
         }
 
     # 出力するデータ全体の構造

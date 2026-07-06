@@ -24,10 +24,10 @@ on:
   # 定期実行スケジュール（cron形式・UTC時間で指定）
   # 日本時間 = UTC + 9時間 なので、
   #   22:00 UTC = 翌朝 7:00 JST
-  #   10:00 UTC = 夜 19:00 JST
+  #   09:00 UTC = 夕方 18:00 JST
   schedule:
     - cron: "0 22 * * *"   # 毎朝7時（日本時間）
-    - cron: "0 10 * * *"   # 毎晩19時（日本時間）
+    - cron: "0 9 * * *"    # 毎夕18時（日本時間）
 
   # 手動実行も可能にする（GitHubの画面から「Run workflow」ボタンで実行できる）
   workflow_dispatch:

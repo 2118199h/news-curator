@@ -27,6 +27,7 @@ export interface Article {
 export interface CategoryInfo {
   display_name: string;   // 画面に表示する名前（例: "通信・キャリア"）
   description: string;    // カテゴリの説明文
+  language: string;       // 言語（"ja"=日本語ニュース, "en"=英語ニュース）
 }
 
 /** articles.json 全体の形 */

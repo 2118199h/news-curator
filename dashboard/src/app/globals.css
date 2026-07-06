@@ -50,6 +50,39 @@ body {
 }
 
 /* ========================================
+   言語切替（国内ニュース / 海外ニュース）
+   ======================================== */
+.language-switch {
+  display: flex;
+  gap: 0;                    /* ボタン同士をくっつける */
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;          /* 角丸からはみ出さないようにする */
+  border: 1px solid #cbd5e0;
+  width: fit-content;        /* 中身の幅に合わせる */
+}
+
+.language-button {
+  padding: 10px 24px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.language-button:hover {
+  background-color: #e2e8f0;
+}
+
+/* 選択中の言語ボタン */
+.language-button.active {
+  background-color: #1e3a5f;  /* 紺色 */
+  color: white;
+}
+
+/* ========================================
    カテゴリタブ
    ======================================== */
 .tabs {
@@ -246,5 +279,15 @@ body {
   .article-meta {
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  /* 言語切替ボタンを画面幅いっぱいに広げる */
+  .language-switch {
+    width: 100%;
+  }
+
+  .language-button {
+    flex: 1;              /* 2つのボタンを均等な幅にする */
+    padding: 10px 8px;
   }
 }
