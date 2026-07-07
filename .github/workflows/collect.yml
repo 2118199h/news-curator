@@ -7,11 +7,13 @@
 #   Pythonスクリプトを自動実行してくれる。
 #
 # このワークフローの流れ:
-#   1. 毎日 朝7時・夜19時（日本時間）に自動起動
-#   2. ニュースを収集（main.py）
-#   3. JSONに書き出し（export_json.py）
-#   4. データベースの変更をリポジトリにコミット
-#   5. ダッシュボードをビルドしてGitHub Pagesに公開
+#   1. 毎日 朝7時・夕18時（日本時間）に自動起動
+#   2. 【省エネ判定】30日以上サイトにアクセスがなければ収集をスキップ
+#      （サイトの「更新」ボタンから手動実行すれば再開する）
+#   3. ニュースを収集（main.py）
+#   4. JSONに書き出し（export_json.py）
+#   5. データベースの変更をリポジトリにコミット
+#   6. ダッシュボードをビルドしてGitHub Pagesに公開
 #
 # 事前準備（READMEに詳細あり）:
 #   - GitHubリポジトリの Settings → Secrets に GEMINI_API_KEY を登録
@@ -29,7 +31,8 @@ on:
     - cron: "0 22 * * *"   # 毎朝7時（日本時間）
     - cron: "0 9 * * *"    # 毎夕18時（日本時間）
 
-  # 手動実行も可能にする（GitHubの画面から「Run workflow」ボタンで実行できる）
+  # 手動実行も可能にする
+  # （GitHubの画面 or サイトの「更新」ボタンから実行できる）
   workflow_dispatch:
 
 # ワークフローに与える権限
@@ -47,62 +50,124 @@ jobs:
       - name: コードをチェックアウト
         uses: actions/checkout@v4
 
-      # --- ステップ2: Python環境の準備 ---
+      # --- ステップ2: 省エネ判定（30日ルール）---
+      # data/last_access.json の日時を確認して、
+      # 30日以上サイトへのアクセスがなければ以降の処理をスキップする。
+      # ただし手動実行（workflow_dispatch）の場合は必ず実行する。
+      - name: アクセス状況をチェック
+        id: check_access
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          from datetime import datetime
+
+          should_run = "true"  # デフォルトは実行する
+
+          # 手動実行なら無条件で実行（更新ボタンからの再開に対応）
+          if "${{ github.event_name }}" == "schedule":
+              try:
+                  with open("data/last_access.json", encoding="utf-8") as f:
+                      data = json.load(f)
+                  last = datetime.fromisoformat(data["last_access"])
+                  days = (datetime.now() - last).days
+                  print(f"最終アクセスから {days}日 経過")
+                  if days > 30:
+                      should_run = "false"
+                      print("30日以上アクセスがないため、今回の収集をスキップします")
+              except Exception as e:
+                  print(f"チェック失敗（実行を継続）: {e}")
+
+          # 判定結果を後続のステップに渡す
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"should_run={should_run}\n")
+          EOF
+
+      # --- ステップ3: Python環境の準備 ---
       - name: Python 3.11 をセットアップ
+        if: steps.check_access.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # --- ステップ3: Pythonパッケージのインストール ---
+      # --- ステップ4: Pythonパッケージのインストール ---
       - name: 依存パッケージをインストール
+        if: steps.check_access.outputs.should_run == 'true'
         run: pip install -r collector/requirements.txt
 
-      # --- ステップ4: ニュース収集の実行 ---
+      # --- ステップ5: ニュース収集の実行 ---
       # GEMINI_API_KEY はリポジトリのSecretsから安全に渡される
       - name: ニュースを収集
+        if: steps.check_access.outputs.should_run == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         working-directory: collector
         run: python main.py
 
-      # --- ステップ5: JSONファイルの書き出し ---
+      # --- ステップ6: JSONファイルの書き出し ---
       - name: 記事データをJSONに書き出し
+        if: steps.check_access.outputs.should_run == 'true'
         working-directory: collector
         run: python export_json.py
 
-      # --- ステップ6: データベースの変更をコミット ---
+      # --- ステップ7: 手動実行の場合はアクセス日時を更新 ---
+      # 更新ボタンが押された = ユーザーがサイトを見ている、とみなす
+      - name: アクセス日時を記録（手動実行時）
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          python3 - <<'EOF'
+          import json
+          from datetime import datetime
+          data = {
+              "_説明": "サイトへの最終アクセス日時を記録するファイル。30日以上更新がないと定期収集が自動停止します（サイトの更新ボタンで再開）。",
+              "last_access": datetime.now().isoformat(timespec="seconds"),
+          }
+          with open("data/last_access.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          print("最終アクセス日時を更新しました")
+          EOF
+
+      # --- ステップ8: データの変更をコミット ---
       # 収集した記事を次回の実行でも使えるよう、リポジトリに保存する
-      - name: データベースをコミット
+      - name: データをコミット
+        if: steps.check_access.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/news.db dashboard/public/data/articles.json -f
+          # サイトからの設定変更（リモートの新しいコミット）と衝突しないよう、
+          # コミット前に最新の状態を取り込む
+          git pull --rebase origin main || true
+          git add data/news.db data/last_access.json dashboard/public/data/articles.json -f
           # 変更がある場合だけコミットする（変更なしでもエラーにしない）
           git diff --staged --quiet || git commit -m "自動収集: $(date +'%Y-%m-%d %H:%M')"
           git push
 
-      # --- ステップ7: Node.js環境の準備 ---
+      # --- ステップ9: Node.js環境の準備 ---
       - name: Node.js 20 をセットアップ
+        if: steps.check_access.outputs.should_run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      # --- ステップ8: ダッシュボードのビルド ---
+      # --- ステップ10: ダッシュボードのビルド ---
       - name: ダッシュボードをビルド
+        if: steps.check_access.outputs.should_run == 'true'
         working-directory: dashboard
         run: |
           npm install
           npm run build
 
-      # --- ステップ9: GitHub Pagesへのデプロイ準備 ---
+      # --- ステップ11: GitHub Pagesへのデプロイ準備 ---
       - name: Pages設定
+        if: steps.check_access.outputs.should_run == 'true'
         uses: actions/configure-pages@v4
 
       - name: ビルド結果をアップロード
+        if: steps.check_access.outputs.should_run == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dashboard/out
 
-      # --- ステップ10: GitHub Pagesに公開 ---
+      # --- ステップ12: GitHub Pagesに公開 ---
       - name: GitHub Pagesにデプロイ
+        if: steps.check_access.outputs.should_run == 'true'
         uses: actions/deploy-pages@v4

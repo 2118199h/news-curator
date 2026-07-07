@@ -17,10 +17,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import type { ArticlesData, Article, CategoryInfo } from "@/lib/types";
 import Header from "@/components/Header";
 import CategoryTabs from "@/components/CategoryTabs";
 import ArticleCard from "@/components/ArticleCard";
+import UpdateButton from "@/components/UpdateButton";
+import { recordAccess } from "@/lib/github";
 
 export default function Home() {
   // ============================================
@@ -59,6 +62,10 @@ export default function Home() {
       })
       .then((json: ArticlesData) => setData(json))
       .catch(() => setLoadError(true)); // エラー時はエラーフラグを立てる
+
+    // 「サイトを見た」記録をGitHubに残す（30日ルール用）
+    // トークン未登録なら何もしない。失敗しても表示に影響しない。
+    recordAccess();
   }, []);
 
   // ============================================
@@ -170,6 +177,14 @@ export default function Home() {
       />
 
       <div className="container">
+        {/* 操作バー: 更新ボタンと設定ページへのリンク */}
+        <div className="action-bar">
+          <UpdateButton />
+          <Link href="/settings" className="settings-link">
+            ⚙️ キーワード設定
+          </Link>
+        </div>
+
         {/* 言語切替（国内 / 海外）: 別画面のように切り替わる */}
         <div className="language-switch">
           <button

@@ -4,6 +4,10 @@
 # このファイルを編集するだけで、収集するニュースのカテゴリ・
 # キーワード・RSSフィードを自由に変更できます。
 #
+# 【キーワードだけ変えたい場合】
+#   Webサイトの「設定」画面から変更できます（keywords.json に保存されます）。
+#   keywords.json にあるカテゴリのキーワードは、このファイルより優先されます。
+#
 # 【カテゴリの追加方法】
 #   categories: の下に新しいカテゴリを追加するだけでOKです。
 #   例えば「半導体」カテゴリを追加したい場合：
@@ -19,12 +23,8 @@
 #       - "半導体"
 #     gemini_prompt: "半導体業界に関するニュース"
 #
-# 【キーワードの変更方法】
-#   各カテゴリの keywords: リストを編集してください。
-#   キーワードに一致する記事だけが収集対象になります。
-#
 # 【英語ニュースについて】
-#   英語のRSSフィードもそのまま登録できます。
+#   language: "en" を付けたカテゴリは「海外ニュース」画面に表示されます。
 #   AI要約は自動的に日本語に翻訳されて生成されます。
 #
 # 【今後カテゴリを増やす時の例】
@@ -193,22 +193,18 @@ categories:
     gemini_prompt: "M&A・企業買収・コーポレートファイナンス・東証の規制動向に関するニュース（案件情報・制度変更を優先）"
 
   # --------------------------------------------------
-  # カテゴリ5: 注目企業
+  # カテゴリ5: 注目企業（国内報道）
   # 業界を問わず、追跡したい企業をここに登録する
   # （通信系以外の企業も自由に追加できます）
   # --------------------------------------------------
   companies:
     display_name: "注目企業"
-    description: "業界を問わず追跡している企業のニュース"
+    description: "業界を問わず追跡している企業のニュース（国内報道）"
     feeds:
       - url: "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml"
         name: "ITmedia NEWS"
       - url: "https://www3.nhk.or.jp/rss/news/cat5.xml"
         name: "NHK 経済ニュース"
-      - url: "https://techcrunch.com/feed/"
-        name: "TechCrunch"
-      - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
-        name: "CNBC Technology"
     # ↓ 日本語・英語の両方の表記を入れておくと取りこぼしが減ります
     keywords:
       - "京セラ"
@@ -226,14 +222,20 @@ categories:
       - "スペースX"
     gemini_prompt: "特定の注目企業（京セラ・NVIDIA・Anthropic・OpenAI・Tesla・SpaceXなど）に関する事業・業績・技術ニュース"
 
+  # ==================================================
+  # ここから下は「海外ニュース」画面のカテゴリ（language: "en"）
+  # ==================================================
+
   # --------------------------------------------------
-  # カテゴリ6: 海外ニュース（米国）
-  # 英語の記事もAIが日本語で要約します
+  # カテゴリ6: 海外・注目企業
+  # 米国メディアが報じる注目企業のニュース
+  # ※ 同じ記事は最初にマッチしたカテゴリに入るため、
+  #   企業ニュースを確実に拾えるよう海外カテゴリの先頭に置く
   # --------------------------------------------------
-  us_news:
-    display_name: "海外（米国）"
-    description: "米国テック・経済の英語ニュース"
-    language: "en"    # ← このカテゴリは英語ニュース（ダッシュボードの画面切替に使う）
+  us_companies:
+    display_name: "注目企業"
+    description: "米国メディアが報じる注目企業のニュース"
+    language: "en"
     feeds:
       - url: "https://techcrunch.com/feed/"
         name: "TechCrunch"
@@ -241,31 +243,41 @@ categories:
         name: "The Verge"
       - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
         name: "CNBC Technology"
-    # 英語の記事に含まれやすいキーワードで絞り込む
-    # 【検索の仕組み】記事のタイトル＋概要文に、下のキーワードの
-    # どれか1つでも含まれていれば収集対象になる（大文字小文字は区別しない）
     keywords:
-      # --- 企業名 ---
       - "OpenAI"
       - "Anthropic"
       - "Nvidia"
       - "Tesla"
       - "SpaceX"
-      - "Microsoft"
-      - "Google"
-      - "Amazon"
-      - "Apple"
-      - "Meta"
+      - "Kyocera"
       - "Oracle"
       - "Snowflake"
       - "Databricks"
       - "CoreWeave"
       - "ServiceNow"
-      - "Intel"
-      - "AMD"
-      - "TSMC"
-      - "Broadcom"
-      # --- AI・テクノロジー ---
+    gemini_prompt: "注目企業（NVIDIA・Anthropic・OpenAI・Tesla・SpaceXなど）に関する米国発ニュース"
+
+  # --------------------------------------------------
+  # カテゴリ7: 海外・テック
+  # 米国のAI・テクノロジー全般のニュース
+  # --------------------------------------------------
+  us_tech:
+    display_name: "テック・AI"
+    description: "米国のAI・テクノロジーニュース"
+    language: "en"
+    feeds:
+      - url: "https://techcrunch.com/feed/"
+        name: "TechCrunch"
+      - url: "https://www.theverge.com/rss/index.xml"
+        name: "The Verge"
+    # 【検索の仕組み】記事のタイトル＋概要文に、下のキーワードの
+    # どれか1つでも含まれていれば収集対象になる（大文字小文字は区別しない）
+    keywords:
+      - "Microsoft"
+      - "Google"
+      - "Amazon"
+      - "Apple"
+      - "Meta"
       - "artificial intelligence"
       - "AI model"
       - "AI chip"
@@ -284,12 +296,26 @@ categories:
       - "chip"
       - "data center"
       - "cloud"
-      # --- ビジネス・マーケット ---
+      - "startup"
+      - "funding"
+    gemini_prompt: "米国のAI・テクノロジーに関する重要ニュース（技術発表・製品発表・スタートアップ動向）"
+
+  # --------------------------------------------------
+  # カテゴリ8: 海外・マーケット
+  # 米国の経済・市場ニュース
+  # --------------------------------------------------
+  us_market:
+    display_name: "マーケット"
+    description: "米国の経済・市場ニュース"
+    language: "en"
+    feeds:
+      - url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=19854910"
+        name: "CNBC Technology"
+    keywords:
       - "acquisition"
       - "acquire"
       - "merger"
       - "IPO"
-      - "funding"
       - "valuation"
       - "billion"
       - "layoff"
@@ -301,7 +327,8 @@ categories:
       - "Federal Reserve"
       - "interest rate"
       - "inflation"
-    gemini_prompt: "米国のテクノロジー・AI・経済に関する重要ニュース（企業発表・市場動向・規制など）"
+      - "Wall Street"
+    gemini_prompt: "米国の経済・株式市場・金融政策に関する重要ニュース"
 
 # ========================================
 # Gemini API設定

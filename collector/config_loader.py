@@ -6,12 +6,18 @@
 # ========================================
 
 import os       # ファイルパスを扱うための標準ライブラリ
+import json     # keywords.json を読み込むための標準ライブラリ
 import yaml     # YAML形式のファイルを読み込むライブラリ
 
 
 def load_config():
     """
     config.yaml を読み込んで辞書として返す関数。
+
+    さらに、keywords.json（Webサイトの設定画面から編集されるファイル）が
+    存在する場合は、そこに書かれたキーワードで config.yaml の
+    キーワードを上書きする。
+    → サイト上でキーワードを変更できる仕組みの中核部分。
 
     戻り値の例:
     {
@@ -38,6 +44,23 @@ def load_config():
     # encoding="utf-8" は日本語が含まれるファイルを正しく読むために必要
     with open(config_path, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)  # YAMLをPythonの辞書に変換
+
+    # --- keywords.json によるキーワードの上書き ---
+    # Webサイトの設定画面で編集されたキーワードがあれば、それを優先する
+    keywords_path = os.path.join(config_dir, "keywords.json")
+    if os.path.exists(keywords_path):
+        with open(keywords_path, "r", encoding="utf-8") as f:
+            custom_keywords = json.load(f)
+
+        # カテゴリごとに、keywords.json に定義があれば上書きする
+        for category_id, category_info in config.get("categories", {}).items():
+            if category_id in custom_keywords:
+                keywords = custom_keywords[category_id]
+                # 中身がリスト（キーワードの配列）であることを確認してから使う
+                if isinstance(keywords, list) and len(keywords) > 0:
+                    category_info["keywords"] = keywords
+
+        print("[設定] keywords.json のキーワードを適用しました")
 
     return config
 
