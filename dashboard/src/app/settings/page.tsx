@@ -190,23 +190,21 @@ export default function SettingsPage() {
             <ol className="settings-steps">
               <li>
                 <a
-                  href="https://github.com/settings/personal-access-tokens/new"
+                  href="https://github.com/settings/tokens/new?scopes=repo&description=news-curator"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   GitHubのトークン作成ページ
                 </a>
-                を開く（要ログイン）
+                を開く（要ログイン。名前と権限は入力済みの状態で開きます）
               </li>
-              <li>Token name: 「news-curator」など好きな名前を入力</li>
-              <li>Expiration: 90 days（期限が切れたら再作成）</li>
-              <li>Repository access: 「Only select repositories」→ news-curator を選択</li>
               <li>
-                Permissions → Repository permissions で以下の2つを設定:
-                <br />・Contents: Read and write（設定ファイルの編集用）
-                <br />・Actions: Read and write（更新ボタン用）
+                Expiration（有効期限）: 「<strong>No expiration</strong>」を選択
+                <br />
+                → 無期限なので、二度と再生成する必要がありません
               </li>
-              <li>「Generate token」を押して、表示されたトークンをコピー</li>
+              <li>ページ下部の「Generate token」ボタンを押す</li>
+              <li>表示された ghp_ で始まるトークンをコピーして、下に貼り付け</li>
             </ol>
             <input
               type="password"

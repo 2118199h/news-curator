@@ -41,6 +41,13 @@ permissions:
   pages: write      # GitHub Pagesにデプロイするため
   id-token: write   # Pagesデプロイの認証のため
 
+# 同時実行の抑制（更新ボタン連打対策）
+# 実行中にもう一度起動されたら、古い方をキャンセルして新しい方だけ動かす。
+# 何回連打されても、実際に動くのは常に1つだけ。
+concurrency:
+  group: news-collect
+  cancel-in-progress: true
+
 jobs:
   collect-and-deploy:
     runs-on: ubuntu-latest   # Ubuntu Linux の仮想マシンで実行
