@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-12T07:34:09.505849",
-  "total_articles": 373,
+  "generated_at": "2026-07-12T12:08:50.439663",
+  "total_articles": 374,
   "categories": {
     "telecom": {
       "display_name": "通信・キャリア",
@@ -44,6 +44,21 @@
     }
   },
   "articles": [
+    {
+      "id": 374,
+      "title": "The fight against AI data centers is just beginning",
+      "url": "https://www.theverge.com/column/963346/ai-data-centers-fight",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-12T12:00:00",
+      "fetched_at": "2026-07-12T12:08:50.308340",
+      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the data center buildout, follow Emma Roth. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Years before the AI boom threatened local power [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 370,
       "title": "‘Almost unlimited’: Execs says AI demand remains strong even as enterprises move to ‘valuemaxxing’",
