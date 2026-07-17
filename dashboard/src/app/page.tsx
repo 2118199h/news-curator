@@ -46,6 +46,16 @@ export default function Home() {
   // 読み込みエラーが起きたかどうか
   const [loadError, setLoadError] = useState(false);
 
+  // --- NEWバッジ・既読管理用の状態 ---
+  // 前回訪問した日時。これより新しく取得された記事に「NEW」を付ける
+  const [newThreshold, setNewThreshold] = useState<string | null>(null);
+
+  // 既読（クリック済み）記事のURL一覧
+  const [readUrls, setReadUrls] = useState<Set<string>>(new Set());
+
+  // 「未読のみ表示」モードのON/OFF
+  const [unreadOnly, setUnreadOnly] = useState(false);
+
   // ============================================
   // データの読み込み
   // useEffect はページが表示された時に1回だけ実行される
@@ -66,7 +76,51 @@ export default function Home() {
     // 「サイトを見た」記録をGitHubに残す（30日ルール用）
     // トークン未登録なら何もしない。失敗しても表示に影響しない。
     recordAccess();
+
+    // --- NEWバッジの基準時刻を決める ---
+    // 「前回の訪問」を記録しておき、それより新しい記事にNEWを付ける。
+    // ページを再読み込みしただけでNEWが消えないよう、
+    // 30分以上間が空いた時だけ「新しい訪問」とみなす。
+    const now = new Date().toISOString();
+    const currentVisit = localStorage.getItem("visit_current"); // 直近の閲覧時刻
+    const prevVisit = localStorage.getItem("visit_prev");       // 前回の訪問時刻
+
+    if (currentVisit) {
+      const minutesSince =
+        (Date.now() - new Date(currentVisit).getTime()) / (1000 * 60);
+      if (minutesSince > 30) {
+        // 30分以上ぶりの訪問 → 「前回の訪問」を更新する
+        localStorage.setItem("visit_prev", currentVisit);
+        setNewThreshold(currentVisit);
+      } else {
+        // 直前にも見ていた（再読み込みなど） → 基準は変えない
+        setNewThreshold(prevVisit);
+      }
+    }
+    localStorage.setItem("visit_current", now);
+
+    // --- 既読記事のURL一覧を読み込む ---
+    try {
+      const saved = JSON.parse(localStorage.getItem("read_urls") ?? "[]");
+      if (Array.isArray(saved)) setReadUrls(new Set(saved));
+    } catch {
+      // 壊れていたら無視して空から始める
+    }
   }, []);
+
+  /** 記事がクリックされた時: 既読として記録する */
+  function markAsRead(url: string) {
+    setReadUrls((prev) => {
+      const next = new Set(prev);
+      next.add(url);
+      // ブラウザに保存する（最新500件だけ保持して肥大化を防ぐ）
+      localStorage.setItem(
+        "read_urls",
+        JSON.stringify([...next].slice(-500))
+      );
+      return next;
+    });
+  }
 
   // ============================================
   // タブ操作の関数
@@ -158,12 +212,28 @@ export default function Home() {
     if (!(article.category in visibleCategories)) return false;
 
     // 条件2: カテゴリが選択されていれば、選択されたものだけ
-    if (selectedCategories.size > 0) {
-      return selectedCategories.has(article.category);
+    if (selectedCategories.size > 0 && !selectedCategories.has(article.category)) {
+      return false;
     }
 
-    return true; // 何も選択されていなければ表示
+    // 条件3: 「未読のみ表示」がONなら、既読の記事を隠す
+    if (unreadOnly && readUrls.has(article.url)) return false;
+
+    return true;
   });
+
+  /** 記事が「NEW」かどうかを判定する関数 */
+  function isNewArticle(article: Article): boolean {
+    // 前回の訪問記録がなければ（初めての訪問）NEWは付けない
+    if (!newThreshold) return false;
+    // 前回訪問より後に取得された記事ならNEW
+    return article.fetched_at > newThreshold;
+  }
+
+  // NEW記事と未読記事の数（ボタンの表示用）
+  const unreadCount = filteredArticles.filter(
+    (a) => !readUrls.has(a.url)
+  ).length;
 
   // ============================================
   // 画面の描画
@@ -177,11 +247,18 @@ export default function Home() {
       />
 
       <div className="container">
-        {/* 操作バー: 更新ボタンと設定ページへのリンク */}
+        {/* 操作バー: 更新ボタン・未読フィルタ・設定ページへのリンク */}
         <div className="action-bar">
           <UpdateButton />
+          {/* 未読のみ表示の切替ボタン */}
+          <button
+            className={`unread-toggle ${unreadOnly ? "active" : ""}`}
+            onClick={() => setUnreadOnly(!unreadOnly)}
+          >
+            {unreadOnly ? "📖 すべて表示" : `📬 未読のみ（${unreadCount}）`}
+          </button>
           <Link href="/settings" className="settings-link">
-            ⚙️ キーワード設定
+            ⚙️ 設定
           </Link>
         </div>
 
@@ -213,10 +290,20 @@ export default function Home() {
         {/* 記事一覧（絞り込み後の記事を1件ずつカードで表示） */}
         {filteredArticles.length > 0 ? (
           filteredArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
+            <ArticleCard
+              key={article.id}
+              article={article}
+              isNew={isNewArticle(article)}
+              isRead={readUrls.has(article.url)}
+              onRead={markAsRead}
+            />
           ))
         ) : (
-          <p className="empty-message">該当する記事はまだありません</p>
+          <p className="empty-message">
+            {unreadOnly
+              ? "未読の記事はありません 🎉"
+              : "該当する記事はまだありません"}
+          </p>
         )}
 
         {/* フッター */}

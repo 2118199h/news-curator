@@ -212,6 +212,194 @@ body {
 }
 
 /* ========================================
+   NEWバッジ・既読表示・未読フィルタ
+   ======================================== */
+/* 新着記事のNEWバッジ */
+.new-badge {
+  display: inline-block;
+  background-color: #e53e3e;  /* 赤 */
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* 既読の記事カードは薄く表示する */
+.article-card.read {
+  opacity: 0.55;
+}
+
+/* 既読ラベル */
+.read-label {
+  color: #38a169;  /* 緑 */
+  font-size: 11px;
+}
+
+/* 未読のみ表示の切替ボタン */
+.unread-toggle {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.unread-toggle:hover {
+  background-color: #e2e8f0;
+}
+
+.unread-toggle.active {
+  background-color: #2b6cb0;  /* ON時は青 */
+  color: white;
+  border-color: #2b6cb0;
+}
+
+/* ========================================
+   タグ編集（設定ページ: 企業名・キーワード）
+   ======================================== */
+.tag-editor {
+  margin-bottom: 16px;
+}
+
+.tag-editor h4 {
+  font-size: 13px;
+  color: #4a5568;
+  margin-bottom: 8px;
+}
+
+/* タグの一覧 */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+/* タグ1つ分（チップ） */
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ebf4ff;  /* 薄い青 */
+  color: #2b6cb0;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* タグの×ボタン */
+.tag-remove {
+  border: none;
+  background: none;
+  color: #2b6cb0;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.tag-remove:hover {
+  color: #c53030;  /* マウスを乗せると赤 */
+}
+
+/* タグがまだない時の表示 */
+.tag-empty {
+  font-size: 12px;
+  color: #a0aec0;
+}
+
+/* タグ追加の入力行 */
+.tag-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.tag-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.tag-add-button {
+  padding: 8px 14px;
+  border: 1px solid #2b6cb0;
+  border-radius: 6px;
+  background-color: white;
+  color: #2b6cb0;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tag-add-button:hover {
+  background-color: #ebf4ff;
+}
+
+/* カテゴリカードの見出し行（タイトル＋削除ボタン） */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* カテゴリの言語ラベル */
+.category-lang {
+  font-size: 11px;
+  font-weight: normal;
+  color: #718096;
+  margin-left: 8px;
+}
+
+/* 小さめの削除ボタン */
+.settings-button.small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* カテゴリ追加の入力行 */
+.new-category-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.new-category-row .settings-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.settings-select {
+  padding: 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* 保存バー（画面下部に固定表示して、いつでも保存できるように） */
+.save-bar {
+  position: sticky;   /* スクロールしても画面下に留まる */
+  bottom: 12px;
+  text-align: center;
+  margin-bottom: 16px;
+  z-index: 10;
+}
+
+.settings-button.save-main {
+  padding: 14px 40px;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);  /* 浮いて見える影 */
+}
+
+/* ========================================
    言語切替（国内ニュース / 海外ニュース）
    ======================================== */
 .language-switch {

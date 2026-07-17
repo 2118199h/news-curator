@@ -3,6 +3,10 @@
 // ========================================
 // 1件の記事を表示するカード型のUI部品（コンポーネント）。
 // タイトル・配信元・日付・要約・キーワードを1枚のカードにまとめる。
+//
+// 追加機能:
+//   - NEWバッジ: 前回サイトを見た時より後に取得された記事に表示
+//   - 既読管理: 一度クリックした記事はカード全体が薄く表示される
 // ========================================
 
 import type { Article } from "@/lib/types";
@@ -30,11 +34,23 @@ function formatDate(dateString: string | null): string {
     .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
 }
 
+// この部品が受け取るデータの形
+interface ArticleCardProps {
+  article: Article;          // 記事データ
+  isNew: boolean;            // 前回訪問より後の新着記事か
+  isRead: boolean;           // 既読（クリック済み）か
+  onRead: (url: string) => void;  // 記事がクリックされた時に呼ぶ関数
+}
+
 /**
  * 記事カードコンポーネント
- * 引数 article に記事1件分のデータを受け取って表示する
  */
-export default function ArticleCard({ article }: { article: Article }) {
+export default function ArticleCard({
+  article,
+  isNew,
+  isRead,
+  onRead,
+}: ArticleCardProps) {
   // キーワード文字列（"AI,クラウド"）を配列（["AI", "クラウド"]）に変換
   // キーワードがない場合は空の配列にする
   const keywordList = article.keywords
@@ -42,11 +58,20 @@ export default function ArticleCard({ article }: { article: Article }) {
     : [];
 
   return (
-    // className に score-4 などを付けると、CSSで左枠の色が変わる
-    <div className={`article-card score-${article.relevance_score}`}>
-      {/* 記事タイトル（クリックで元記事を新しいタブで開く） */}
+    // 既読の記事には "read" クラスを付けて薄く表示する
+    <div
+      className={`article-card score-${article.relevance_score} ${isRead ? "read" : ""}`}
+    >
+      {/* 記事タイトル（クリックで元記事を新しいタブで開く＋既読として記録） */}
       <h2>
-        <a href={article.url} target="_blank" rel="noopener noreferrer">
+        {/* 未読の新着記事にはNEWバッジを表示 */}
+        {isNew && !isRead && <span className="new-badge">NEW</span>}
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => onRead(article.url)}
+        >
           {article.title}
         </a>
       </h2>
@@ -58,6 +83,7 @@ export default function ArticleCard({ article }: { article: Article }) {
         <span className={`score-badge score-${article.relevance_score}`}>
           {SCORE_LABELS[article.relevance_score] ?? ""}
         </span>
+        {isRead && <span className="read-label">✓ 既読</span>}
       </div>
 
       {/* AIが生成した3行要約（ある場合のみ表示） */}

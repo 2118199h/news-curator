@@ -1,95 +1,173 @@
 // ========================================
 // settings/page.tsx — 設定ページ
 // ========================================
-// サイト上でキーワードを編集するためのページ。
+// サイト上でカテゴリとキーワードを編集するためのページ。
 // URL: /settings
 //
 // 画面の構成:
 //   1. GitHubトークンの登録（初回のみ・ログインに相当）
-//   2. カテゴリごとのキーワード編集（1行に1キーワード）
-//   3. 保存ボタン → GitHubのkeywords.jsonに保存される
+//   2. カテゴリごとの編集カード
+//      - 「企業・組織名」と「キーワード（単語）」を分けてタグ形式で編集
+//      - タグの×で削除、入力欄＋追加ボタンで追加
+//   3. カテゴリの新規追加・削除
+//   4. 保存ボタン → GitHubのkeywords.jsonに保存される
 //
-// 保存したキーワードは、次回のニュース収集から反映される。
+// 保存した内容は、次回のニュース収集から反映される。
 // ========================================
 
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import type { ArticlesData } from "@/lib/types";
 import { getToken, saveToken, clearToken, getFile, putFile } from "@/lib/github";
 
+// ============================================
+// このページで扱うデータの形
+// ============================================
+
+/** カテゴリ1件分の編集データ */
+interface CategoryEdit {
+  display_name: string;  // 表示名（例: "通信・キャリア"）
+  language: string;      // "ja"（国内） or "en"（海外）
+  builtin: boolean;      // true = 元からあるカテゴリ（削除不可）
+  companies: string[];   // 企業・組織名のリスト
+  words: string[];       // 単語のリスト
+}
+
+// ============================================
+// タグ編集の部品（企業名・単語の入力欄）
+// ============================================
+
+/** タグの一覧＋追加入力欄を表示する小さな部品 */
+function TagEditor({
+  label,        // 見出し（例: "🏢 企業・組織名"）
+  placeholder,  // 入力欄のヒント文
+  tags,         // 現在のタグ一覧
+  onChange,     // タグが変わった時に呼ぶ関数
+}: {
+  label: string;
+  placeholder: string;
+  tags: string[];
+  onChange: (tags: string[]) => void;
+}) {
+  // 入力欄の文字
+  const [input, setInput] = useState("");
+
+  /** タグを追加する（重複と空文字は無視） */
+  function addTag() {
+    const value = input.trim();
+    if (value === "" || tags.includes(value)) {
+      setInput("");
+      return;
+    }
+    onChange([...tags, value]);
+    setInput("");
+  }
+
+  /** タグを削除する */
+  function removeTag(tag: string) {
+    onChange(tags.filter((t) => t !== tag));
+  }
+
+  return (
+    <div className="tag-editor">
+      <h4>{label}</h4>
+      {/* タグの一覧（×ボタン付き） */}
+      <div className="tag-list">
+        {tags.map((tag) => (
+          <span key={tag} className="tag-chip">
+            {tag}
+            <button
+              className="tag-remove"
+              onClick={() => removeTag(tag)}
+              title="削除"
+            >
+              ×
+            </button>
+          </span>
+        ))}
+        {tags.length === 0 && (
+          <span className="tag-empty">（まだ登録されていません）</span>
+        )}
+      </div>
+      {/* 追加入力欄: Enterキーでも追加できる */}
+      <div className="tag-input-row">
+        <input
+          className="tag-input"
+          placeholder={placeholder}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") addTag();
+          }}
+        />
+        <button className="tag-add-button" onClick={addTag}>
+          ＋ 追加
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ============================================
+// メインの設定ページ
+// ============================================
+
 export default function SettingsPage() {
-  // ============================================
-  // 状態（state）の定義
-  // ============================================
+  // --- 状態（state）の定義 ---
+  const [hasToken, setHasToken] = useState(false);       // トークン登録済みか
+  const [tokenInput, setTokenInput] = useState("");      // トークン入力欄
+  const [categories, setCategories] = useState<Record<string, CategoryEdit>>({}); // 全カテゴリの編集データ
+  const [fileSha, setFileSha] = useState("");            // 保存に必要なバージョン識別子
+  const [message, setMessage] = useState("");            // 成功・エラーメッセージ
+  const [loading, setLoading] = useState(false);         // 読み込み・保存中か
+  const [newCatName, setNewCatName] = useState("");      // 新カテゴリの名前入力欄
+  const [newCatLang, setNewCatLang] = useState("ja");    // 新カテゴリの言語選択
 
-  // トークンが登録済みかどうか
-  const [hasToken, setHasToken] = useState(false);
-
-  // トークン入力欄の内容
-  const [tokenInput, setTokenInput] = useState("");
-
-  // カテゴリごとのキーワード（テキストエリアの中身）
-  // 例: { telecom: "KDDI\nソフトバンク", ... }
-  const [keywordTexts, setKeywordTexts] = useState<Record<string, string>>({});
-
-  // カテゴリの表示名（articles.jsonから取得）
-  const [categoryNames, setCategoryNames] = useState<Record<string, string>>({});
-
-  // keywords.json の保存に必要なバージョン識別子
-  const [fileSha, setFileSha] = useState("");
-
-  // 画面に表示するメッセージ（成功・エラー）
-  const [message, setMessage] = useState("");
-
-  // 読み込み中・保存中の状態
-  const [loading, setLoading] = useState(false);
-
-  // ============================================
-  // 初期化: トークンの有無を確認し、あればキーワードを読み込む
-  // ============================================
+  // --- 初期化: トークンがあれば設定を読み込む ---
   useEffect(() => {
     if (getToken()) {
       setHasToken(true);
-      loadKeywords();
+      loadSettings();
     }
   }, []);
 
-  /** GitHubからキーワード設定を読み込む */
-  async function loadKeywords() {
+  /** GitHubからカテゴリ・キーワード設定を読み込む */
+  async function loadSettings() {
     setLoading(true);
     setMessage("");
     try {
-      // --- keywords.json を読み込む ---
       const file = await getFile("collector/keywords.json");
       const data = JSON.parse(file.content);
       setFileSha(file.sha);
 
-      // カテゴリごとのキーワード配列を「1行1キーワード」のテキストに変換
-      const texts: Record<string, string> = {};
-      for (const [categoryId, keywords] of Object.entries(data)) {
-        if (categoryId.startsWith("_")) continue; // "_説明" などの特殊キーは除く
-        if (Array.isArray(keywords)) {
-          texts[categoryId] = keywords.join("\n");
-        }
-      }
-      setKeywordTexts(texts);
+      // JSONの中身を編集用のデータに変換する
+      const loaded: Record<string, CategoryEdit> = {};
+      for (const [id, entry] of Object.entries(data)) {
+        if (id.startsWith("_")) continue; // "_説明" などは除く
 
-      // --- カテゴリの表示名を articles.json から取得 ---
-      const basePath =
-        process.env.NODE_ENV === "production" ? "/news-curator" : "";
-      const response = await fetch(`${basePath}/data/articles.json`);
-      if (response.ok) {
-        const articlesData: ArticlesData = await response.json();
-        const names: Record<string, string> = {};
-        for (const [id, info] of Object.entries(articlesData.categories)) {
-          // 国内/海外がわかるように表示名を作る
-          const lang = (info.language ?? "ja") === "en" ? "【海外】" : "【国内】";
-          names[id] = `${lang} ${info.display_name}`;
+        if (Array.isArray(entry)) {
+          // 旧形式（ただのリスト）の場合は「単語」として読み込む
+          loaded[id] = {
+            display_name: id,
+            language: "ja",
+            builtin: true,
+            companies: [],
+            words: entry as string[],
+          };
+        } else if (typeof entry === "object" && entry !== null) {
+          // 新形式
+          const e = entry as Partial<CategoryEdit>;
+          loaded[id] = {
+            display_name: e.display_name ?? id,
+            language: e.language ?? "ja",
+            builtin: e.builtin ?? false,
+            companies: e.companies ?? [],
+            words: e.words ?? [],
+          };
         }
-        setCategoryNames(names);
       }
+      setCategories(loaded);
     } catch (e) {
       setMessage(`読み込みエラー: ${e instanceof Error ? e.message : e}`);
     } finally {
@@ -99,62 +177,111 @@ export default function SettingsPage() {
 
   /** トークンを保存して編集画面に進む */
   function handleSaveToken() {
-    if (!tokenInput.trim().startsWith("github_pat_") && !tokenInput.trim().startsWith("ghp_")) {
-      setMessage("トークンの形式が正しくありません（github_pat_ または ghp_ で始まります）");
+    const t = tokenInput.trim();
+    if (!t.startsWith("github_pat_") && !t.startsWith("ghp_")) {
+      setMessage("トークンの形式が正しくありません（ghp_ または github_pat_ で始まります）");
       return;
     }
-    saveToken(tokenInput);
+    saveToken(t);
     setTokenInput("");
     setHasToken(true);
     setMessage("");
-    loadKeywords();
+    loadSettings();
   }
 
   /** トークンを削除する（ログアウト） */
   function handleLogout() {
     clearToken();
     setHasToken(false);
-    setKeywordTexts({});
+    setCategories({});
     setMessage("トークンを削除しました");
   }
 
-  /** キーワードをGitHubに保存する */
+  /** カテゴリの編集内容を更新する（TagEditorから呼ばれる） */
+  function updateCategory(id: string, patch: Partial<CategoryEdit>) {
+    setCategories((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], ...patch },
+    }));
+  }
+
+  /** 新しいカテゴリを追加する */
+  function addCategory() {
+    const name = newCatName.trim();
+    if (name === "") {
+      setMessage("カテゴリ名を入力してください");
+      return;
+    }
+    // カテゴリIDは自動生成する（例: custom_1720000000）
+    const id = `custom_${Date.now()}`;
+    setCategories((prev) => ({
+      ...prev,
+      [id]: {
+        display_name: name,
+        language: newCatLang,
+        builtin: false,   // サイトで追加したカテゴリは削除できる
+        companies: [],
+        words: [],
+      },
+    }));
+    setNewCatName("");
+    setMessage(`カテゴリ「${name}」を追加しました。キーワードを登録して保存してください`);
+  }
+
+  /** カテゴリを削除する（サイトで追加したものだけ） */
+  function removeCategory(id: string) {
+    const name = categories[id]?.display_name ?? id;
+    if (!confirm(`カテゴリ「${name}」を削除しますか？`)) return;
+    setCategories((prev) => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+  }
+
+  /** 設定をGitHubに保存する */
   async function handleSave() {
     setLoading(true);
     setMessage("");
     try {
-      // テキストエリアの内容をキーワード配列に戻す
-      // （空行や前後の空白は取り除く）
-      const data: Record<string, string[] | string> = {
+      // 編集データをkeywords.jsonの形式に戻す
+      const data: Record<string, unknown> = {
         _説明:
-          "このファイルはWebサイトの設定画面から編集されるキーワード一覧です。ここにあるカテゴリのキーワードは config.yaml より優先されます。",
+          "Webサイトの設定画面から編集されるカテゴリ・キーワード設定です。companies=企業・組織名、words=単語。両方をあわせて検索に使います。builtin=true のカテゴリは config.yaml 由来（サイトから削除不可）。ここにないカテゴリは config.yaml の設定がそのまま使われ、ここに新しいカテゴリを書くと自動で追加されます。",
       };
-      for (const [categoryId, text] of Object.entries(keywordTexts)) {
-        data[categoryId] = text
-          .split("\n")
-          .map((line) => line.trim())
-          .filter((line) => line !== "");
+      for (const [id, cat] of Object.entries(categories)) {
+        data[id] = {
+          display_name: cat.display_name,
+          language: cat.language,
+          builtin: cat.builtin,
+          companies: cat.companies,
+          words: cat.words,
+        };
       }
 
-      // GitHubに保存（= コミットされる）
       await putFile(
         "collector/keywords.json",
         JSON.stringify(data, null, 2) + "\n",
         fileSha,
-        "サイトからキーワードを更新"
+        "サイトからカテゴリ・キーワードを更新"
       );
 
       // 保存後は新しいバージョン識別子を取得し直す
       const file = await getFile("collector/keywords.json");
       setFileSha(file.sha);
 
-      setMessage("✅ 保存しました！次回のニュース収集（または更新ボタン）から反映されます");
+      setMessage("✅ 保存しました！次回の収集（または更新ボタン）から反映されます");
     } catch (e) {
       setMessage(`保存エラー: ${e instanceof Error ? e.message : e}`);
     } finally {
       setLoading(false);
     }
   }
+
+  // カテゴリを「国内→海外」の順に並べる（表示用）
+  const sortedEntries = Object.entries(categories).sort(
+    ([, a], [, b]) => (a.language === "ja" ? 0 : 1) - (b.language === "ja" ? 0 : 1)
+  );
 
   // ============================================
   // 画面の描画
@@ -163,7 +290,7 @@ export default function SettingsPage() {
     <main>
       <header className="header">
         <div className="container">
-          <h1>⚙️ 設定 — 収集キーワードの編集</h1>
+          <h1>⚙️ 設定 — カテゴリとキーワードの編集</h1>
           <p className="subtitle">
             <Link href="/" style={{ color: "white" }}>
               ← ダッシュボードに戻る
@@ -173,17 +300,16 @@ export default function SettingsPage() {
       </header>
 
       <div className="container">
-        {/* メッセージ表示欄 */}
         {message && <p className="settings-message">{message}</p>}
 
         {!hasToken ? (
           /* ============================================
-             トークン未登録: 登録フォームを表示（ログイン画面に相当）
+             トークン未登録: 登録フォーム（ログイン画面に相当）
              ============================================ */
           <div className="settings-card">
             <h2>初回設定: GitHubトークンの登録</h2>
             <p className="settings-note">
-              キーワードの編集にはGitHubトークン（あなた専用の鍵）が必要です。
+              編集にはGitHubトークン（あなた専用の鍵）が必要です。
               以下の手順で取得して貼り付けてください。
               トークンはこのブラウザ内にだけ保存されます。
             </p>
@@ -209,7 +335,7 @@ export default function SettingsPage() {
             <input
               type="password"
               className="settings-input"
-              placeholder="github_pat_ で始まるトークンを貼り付け"
+              placeholder="ghp_ で始まるトークンを貼り付け"
               value={tokenInput}
               onChange={(e) => setTokenInput(e.target.value)}
             />
@@ -219,44 +345,99 @@ export default function SettingsPage() {
           </div>
         ) : (
           /* ============================================
-             トークン登録済み: キーワード編集画面を表示
+             トークン登録済み: カテゴリ編集画面
              ============================================ */
           <>
-            <div className="settings-card">
-              <h2>キーワードの編集</h2>
-              <p className="settings-note">
-                1行に1つのキーワードを入力してください。
-                キーワードのどれか1つでもタイトル・概要に含まれる記事が収集されます。
-              </p>
+            <p className="settings-note" style={{ marginBottom: 16 }}>
+              「企業・組織名」と「キーワード（単語）」のどちらか1つでも
+              記事のタイトル・概要に含まれていれば収集されます。
+              編集したら最後に「保存」を押してください。
+            </p>
 
-              {loading && <p>読み込み中...</p>}
+            {loading && <p>読み込み中...</p>}
 
-              {/* カテゴリごとにテキストエリアを表示 */}
-              {Object.entries(keywordTexts).map(([categoryId, text]) => (
-                <div key={categoryId} className="keyword-editor">
-                  <h3>{categoryNames[categoryId] ?? categoryId}</h3>
-                  <textarea
-                    className="settings-textarea"
-                    rows={Math.min(10, text.split("\n").length + 1)}
-                    value={text}
-                    onChange={(e) =>
-                      setKeywordTexts({
-                        ...keywordTexts,
-                        [categoryId]: e.target.value,
-                      })
-                    }
-                  />
+            {/* カテゴリごとの編集カード */}
+            {sortedEntries.map(([id, cat]) => (
+              <div key={id} className="settings-card">
+                <div className="category-header">
+                  <h2>
+                    {cat.language === "en" ? "🇺🇸" : "🇯🇵"} {cat.display_name}
+                    <span className="category-lang">
+                      {cat.language === "en" ? "海外ニュース" : "国内ニュース"}
+                    </span>
+                  </h2>
+                  {/* サイトで追加したカテゴリだけ削除できる */}
+                  {!cat.builtin && (
+                    <button
+                      className="settings-button danger small"
+                      onClick={() => removeCategory(id)}
+                    >
+                      カテゴリを削除
+                    </button>
+                  )}
                 </div>
-              ))}
 
-              <button
-                className="settings-button"
-                onClick={handleSave}
-                disabled={loading}
-              >
-                {loading ? "保存中..." : "💾 キーワードを保存"}
-              </button>
-            </div>
+                {/* 企業・組織名の編集 */}
+                <TagEditor
+                  label="🏢 企業・組織名"
+                  placeholder="例: トヨタ自動車"
+                  tags={cat.companies}
+                  onChange={(tags) => updateCategory(id, { companies: tags })}
+                />
+
+                {/* 単語の編集 */}
+                <TagEditor
+                  label="🔍 キーワード（単語）"
+                  placeholder="例: 自動運転"
+                  tags={cat.words}
+                  onChange={(tags) => updateCategory(id, { words: tags })}
+                />
+              </div>
+            ))}
+
+            {/* カテゴリの新規追加 */}
+            {!loading && (
+              <div className="settings-card">
+                <h2>➕ カテゴリを追加</h2>
+                <p className="settings-note">
+                  情報源（RSS）の設定は不要です。同じ画面（国内/海外）の
+                  ニュースソース全体から、キーワードに合う記事を集めます。
+                </p>
+                <div className="new-category-row">
+                  <input
+                    className="settings-input"
+                    style={{ marginBottom: 0 }}
+                    placeholder="カテゴリ名（例: 半導体、エネルギー）"
+                    value={newCatName}
+                    onChange={(e) => setNewCatName(e.target.value)}
+                  />
+                  <select
+                    className="settings-select"
+                    value={newCatLang}
+                    onChange={(e) => setNewCatLang(e.target.value)}
+                  >
+                    <option value="ja">🇯🇵 国内</option>
+                    <option value="en">🇺🇸 海外</option>
+                  </select>
+                  <button className="settings-button" onClick={addCategory}>
+                    追加
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* 保存ボタン（画面下部に固定表示） */}
+            {!loading && Object.keys(categories).length > 0 && (
+              <div className="save-bar">
+                <button
+                  className="settings-button save-main"
+                  onClick={handleSave}
+                  disabled={loading}
+                >
+                  {loading ? "保存中..." : "💾 すべての変更を保存"}
+                </button>
+              </div>
+            )}
 
             <div className="settings-card">
               <h2>トークンの管理</h2>
