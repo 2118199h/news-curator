@@ -64,6 +64,25 @@ LOW_QUALITY_WORDS = [
     "閲覧注意",
 ]
 
+# --- 商品セール・安売り記事を除外するNGワード ---
+# 「スマホが実質24円」のような商品のお買い得情報を除外する
+# ※「値下げ」は電気料金値下げなど経済ニュースにも使われるため入れていない
+SALE_WORDS = [
+    "セール",
+    "お得",
+    "割引",
+    "クーポン",
+    "ポイント還元",
+    "特価",
+    "激安",
+    "在庫処分",
+    "投げ売り",
+    "タイムセール",
+    "キャンペーンまとめ",
+    "% off",
+    "discount",
+]
+
 # --- 英語記事用のNGワード ---
 # 米国ニュースのフィードに混ざるセール情報・広告記事を除外する
 ENGLISH_NG_WORDS = [
@@ -81,4 +100,4 @@ ENGLISH_NG_WORDS = [
 
 # --- 全NGワードを1つにまとめたリスト ---
 # prefilter.py はこのリストを使ってチェックする
-ALL_NG_WORDS = JOB_WORDS + AD_WORDS + LOW_QUALITY_WORDS + ENGLISH_NG_WORDS
+ALL_NG_WORDS = JOB_WORDS + AD_WORDS + LOW_QUALITY_WORDS + SALE_WORDS + ENGLISH_NG_WORDS

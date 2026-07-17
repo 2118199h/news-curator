@@ -205,7 +205,10 @@ def get_recent_articles(conn, days=7):
         WHERE is_filtered_out = 0          -- フィルタ除外されていない記事だけ
           AND relevance_score >= 3          -- スコア3以上の記事だけ
           AND fetched_at >= ?              -- 指定日以降に取得した記事だけ
-        ORDER BY published_at DESC         -- 新しい記事から順に
+        -- 新しい記事から順に並べる。
+        -- COALESCE = 公開日時がない記事は取得日時で代用する
+        -- （日時のない記事が一番下に埋もれてしまうのを防ぐ）
+        ORDER BY COALESCE(published_at, fetched_at) DESC
     """, (since,))
 
     # sqlite3.Row を普通の辞書に変換して返す
