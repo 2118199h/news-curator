@@ -10,14 +10,15 @@
 #   ステージ3: 重複排除（同じ記事・似た記事を除外）
 # ========================================
 
+import re  # 正規表現（文字のパターン検索）の標準ライブラリ
 from difflib import SequenceMatcher  # 文字列の類似度を計算する標準ライブラリ
 
-from ng_words import ALL_NG_WORDS  # NGワードリストを読み込む
+from ng_words import ALL_NG_WORDS, NG_PATTERNS  # NGワードとNGパターンを読み込む
 
 
 def contains_ng_word(text):
     """
-    テキストにNGワードが含まれているかチェックする関数。
+    テキストにNGワード・NGパターンが含まれているかチェックする関数。
 
     引数:
         text: チェック対象の文字列（タイトル＋概要文）
@@ -25,9 +26,18 @@ def contains_ng_word(text):
     戻り値:
         NGワードが見つかった場合はそのワード、なければ None
     """
+    # --- 単純な単語のチェック ---
     for ng_word in ALL_NG_WORDS:
         if ng_word in text:
             return ng_word  # 見つかったNGワードを返す
+
+    # --- パターン（正規表現）のチェック ---
+    # 例:「実質24円」のような「単語＋金額」の組み合わせを検出する
+    for pattern in NG_PATTERNS:
+        match = re.search(pattern, text)
+        if match:
+            return match.group(0)  # マッチした部分の文字列を返す
+
     return None  # NGワードなし
 
 
