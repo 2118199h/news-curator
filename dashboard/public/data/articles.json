@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-18T12:02:47.974716",
-  "total_articles": 120,
+  "generated_at": "2026-07-19T03:18:47.239350",
+  "total_articles": 125,
   "categories": {
     "telecom": {
       "display_name": "通信・キャリア",
@@ -44,6 +44,81 @@
     }
   },
   "articles": [
+    {
+      "id": 247,
+      "title": "安売り合戦で消耗→商売敵に買収されるも閑散…生協に敗れて建物の半分が閉鎖｢熊本の廃墟モール｣の\"切ない歴史\" | ライフ | 東洋経済オンライン",
+      "url": "https://toyokeizai.net/articles/-/951819?utm_source=rss&utm_medium=http&utm_campaign=link_back",
+      "source": "東洋経済オンライン",
+      "category": "ma",
+      "published_at": "2026-07-18T21:30:00",
+      "fetched_at": "2026-07-19T03:18:47.049703",
+      "description": "かつて人々で賑わった商業施設が､静寂に包まれた廃墟モールへと変わる背景には何があるのでしょうか。熊本県水俣市の｢エムズシティ｣を舞台に､廃墟モールが生まれる背景に迫ります。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 248,
+      "title": "Dave Eggers told OpenAI staff  that ChatGPT was ‘silencing an entire generation’",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/967630/dave-eggers-openai-chatgpt-silencing-an-entire-generation",
+      "source": "The Verge",
+      "category": "us_companies",
+      "published_at": "2026-07-18T20:54:42",
+      "fetched_at": "2026-07-19T03:18:47.049981",
+      "description": "Last year, Sam Altman invited author Dave Eggers to give a talk to around 200 OpenAI staffers. The man has written countless novels, screenplays, pieces of journalism, started McSweeney's, and founded multiple schools and nonprofits that support writers and the arts more broadly. So one might expect he'd roll into the company's offices and offer [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 249,
+      "title": "Google might not kneecap the Pixel 11a with an old processor",
+      "url": "https://www.theverge.com/tech/967612/google-pixel-11a-tensor-g6-leak",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-18T18:25:08",
+      "fetched_at": "2026-07-19T03:18:47.050005",
+      "description": "Mystic Leaks suggests that the Pixel 11a will return to featuring a flagship-grade processor with the Tensor G6. Rather than the Tensor G5 found in the Pixel 10 and 10 Pro, the Pixel 10a shipped with the previous generation Tensor G4. That was a huge disappointment since, typically, the Pixel a lineup kept the modern [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 250,
+      "title": "Google is open-sourcing its 3D emoji",
+      "url": "https://www.theverge.com/design/967606/google-open-source-3d-emoji",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-18T16:40:55",
+      "fetched_at": "2026-07-19T03:18:47.050015",
+      "description": "Now, if you want to, you can use Google's 3D emoji in your own creations. The company shared some details about how it went about designing the little pictograms and why, as part of World Emoji Day on Friday. Things you might not necessarily worry about in a 2D illustration suddenly become very important when [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 251,
+      "title": "The AI rotation stole the spotlight from a strong start to earnings season",
+      "url": "https://www.cnbc.com/2026/07/18/the-ai-rotation-stole-the-spotlight-from-a-strong-start-to-earnings-season-.html",
+      "source": "CNBC Technology",
+      "category": "us_market",
+      "published_at": "2026-07-18T16:33:19",
+      "fetched_at": "2026-07-19T03:18:47.050024",
+      "description": "The AI trade dominated the market once again this week, upstaging an impressive start to the second-quarter earnings season.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 228,
       "title": "国土拡張の野心はトランプだけではなかった　1803年｢史上最大のバーゲン｣と言われた\"ルイジアナ買収\"の舞台裏 | ライフ | 東洋経済オンライン",
