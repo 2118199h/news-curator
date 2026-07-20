@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-20T12:26:35.003672",
-  "total_articles": 134,
+  "generated_at": "2026-07-20T15:33:22.742210",
+  "total_articles": 139,
   "categories": {
     "telecom": {
       "display_name": "通信・キャリア",
@@ -44,6 +44,81 @@
     }
   },
   "articles": [
+    {
+      "id": 261,
+      "title": "Inference startup Infinity raises $15M from Touring Capital, OpenAI and Athropic researchers",
+      "url": "https://techcrunch.com/2026/07/20/inference-startup-infinity-raises-15m-from-touring-capital-openai-and-athropic-researchers/",
+      "source": "TechCrunch",
+      "category": "us_companies",
+      "published_at": "2026-07-20T15:15:00",
+      "fetched_at": "2026-07-20T15:33:22.566759",
+      "description": "AI infrastructure company Infinity announced Monday a $15 million raise at a $100 million valuation from investors including Touring Capital, Principal VC, and researchers from companies such as OpenAI and Anthropic.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 265,
+      "title": "Alphabet stock pops on report it's developing a more efficient AI chip",
+      "url": "https://www.cnbc.com/2026/07/20/alphabet-googl-stock-ai-chip-report.html",
+      "source": "CNBC Technology",
+      "category": "us_market",
+      "published_at": "2026-07-20T14:35:06",
+      "fetched_at": "2026-07-20T15:33:22.567080",
+      "description": "The new AI chip, called \"Frozen v2,\" would embed parts of Gemini's architecture directly into the silicon, according to the report.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 262,
+      "title": "AMD launches Helios, its first rack AI system to rival Nvidia, adding Microsoft as newest buyer",
+      "url": "https://www.cnbc.com/2026/07/20/amd-helios-microsoft-ai-nvidia.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-07-20T14:07:29",
+      "fetched_at": "2026-07-20T15:33:22.567000",
+      "description": "AMD is taking aim at Nvidia with Helios, its first AI rack system, and has landed Microsoft as a new customer, joining Meta, OpenAI and Oracle.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 264,
+      "title": "Electric air taxis go to war",
+      "url": "https://www.theverge.com/transportation/967891/archer-evtol-military-anduril-air-taxi-thunder",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-20T13:52:21",
+      "fetched_at": "2026-07-20T15:33:22.567039",
+      "description": "Electric aviation is still in its infancy, but manufacturers are already looking beyond mere air taxi trips across cities. Today, one of the leading air taxi startups, San Jose-based Archer Aviation, unveiled a new aircraft it co-developed with defense technology company Anduril - though the platform is designed for both military and commercial uses, the [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 263,
+      "title": "StrictlyVC returns to New York City September 10 to celebrate a huge year for the city’s startup community",
+      "url": "https://techcrunch.com/2026/07/20/strictlyvc-returns-to-new-york-city-september-10-to-celebrate-a-huge-year-for-the-citys-startup-community/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-07-20T12:30:00",
+      "fetched_at": "2026-07-20T15:33:22.567025",
+      "description": "For the first time since 2024, StrictlyVC is coming back to New York City — and we're bringing the kind of access you’d expect from an under-wraps event to the whole startup, VC, and dealmaking community.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 259,
       "title": "China delivers a one-two punch to America’s AI dominance",
