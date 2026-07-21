@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-21T07:42:06.024600",
-  "total_articles": 156,
+  "generated_at": "2026-07-21T11:21:33.932008",
+  "total_articles": 161,
   "categories": {
     "telecom": {
       "display_name": "通信・キャリア",
@@ -44,6 +44,81 @@
     }
   },
   "articles": [
+    {
+      "id": 284,
+      "title": "America needs to stop getting shocked by Chinese AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/968136/chinese-ai-models-another-sputnik-moment",
+      "source": "The Verge",
+      "category": "us_companies",
+      "published_at": "2026-07-21T11:08:56",
+      "fetched_at": "2026-07-21T11:21:33.733425",
+      "description": "Last week, two Chinese AI companies unveiled models they say can credibly compete with the best systems from OpenAI and Anthropic. The response was swift and predictable. Markets wobbled, commentators declared Silicon Valley shooketh, and policymakers reached for the familiar language of arms races and wake-up calls. In one headline, The Associated Press said a [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 285,
+      "title": "Nebius stock surges as Nvidia discloses 9.3% stake in neocloud",
+      "url": "https://www.cnbc.com/2026/07/21/nebius-stock-nvidia-stake-neocloud.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-07-21T10:20:13",
+      "fetched_at": "2026-07-21T11:21:33.733450",
+      "description": "Nvidia said it would invest $2 billion into Nebius in March.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 287,
+      "title": "Who’s afraid of the big, bad GPU?",
+      "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-21T10:00:01",
+      "fetched_at": "2026-07-21T11:21:33.733488",
+      "description": "How does AI make you feel? Are you excited to “vibe-code” your smart home? Or anxious about all the added pollution and billions of gallons of water used by data centers? Dig a little deeper and you’ll start to question the actual value of the GPUs that underpin all the leaps and promises of generative [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 286,
+      "title": "Gritt exits stealth with $34 million for robots to build solar plants—then, everything else",
+      "url": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-07-21T10:00:00",
+      "fetched_at": "2026-07-21T11:21:33.733471",
+      "description": "Gritt is coming out of stealth with $34 million and plan to automate the hardest tasks on construction sites.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 283,
+      "title": "円相場 いくぶん値下がり イラン情勢の先行き不透明感で",
+      "url": "http://www3.nhk.or.jp/news/html/20260721/k10015181961000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-07-21T09:31:34",
+      "fetched_at": "2026-07-21T11:21:33.733125",
+      "description": "21日の東京外国為替市場、円相場はイラン情勢の先行きに対する不透明感から、ドルを買って円を売る動きが進み、いくぶん値下がりしました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 271,
       "title": "「強い経済」へ経済財政運営を抜本転換 高市政権 初の骨太方針",
