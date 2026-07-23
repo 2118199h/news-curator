@@ -1,11 +1,16 @@
 {
-  "generated_at": "2026-07-23T06:43:36.444245",
-  "total_articles": 276,
+  "generated_at": "2026-07-23T07:09:44.330997",
+  "total_articles": 277,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
       "description": "SaaSに関するニュース（サイトから追加）",
       "language": "ja"
+    },
+    "custom_1784790382310": {
+      "display_name": "SaaS",
+      "description": "SaaSに関するニュース（サイトから追加）",
+      "language": "en"
     },
     "telecom": {
       "display_name": "通信・キャリア",
@@ -49,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 403,
+      "title": "米政府、中国AI「Kimi K3」開発元を批判　Anthropic「Fable」を蒸留したとして",
+      "url": "https://www.itmedia.co.jp/news/articles/2607/23/news105.html",
+      "source": "ITmedia NEWS",
+      "category": "companies",
+      "published_at": "2026-07-23T06:35:00",
+      "fetched_at": "2026-07-23T07:09:44.188162",
+      "description": "ホワイトハウス科学技術政策局のクラツィオス局長が、中国のMoonshot AIがAnthropicのAIモデル「Fable」を蒸留して自社モデル「Kimi K3」を開発したとする情報があると投稿した。米国の技術を狙った大規模で隠密な蒸留は容認できないと批判している。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 373,
       "title": "ServiceNow bets $40 million on Indian banking software specialist to expand its financial services push",
