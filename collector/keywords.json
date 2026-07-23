@@ -248,5 +248,28 @@
       "DAP",
       "Reverse ETL"
     ]
+  },
+  "custom_1784790382310": {
+    "display_name": "SaaS",
+    "language": "en",
+    "builtin": false,
+    "companies": [
+      "yext",
+      "walk me",
+      "warkato",
+      "boomi",
+      "Dify",
+      "Glean",
+      "Data robot",
+      "Hightouch",
+      "sierra",
+      "decagon"
+    ],
+    "words": [
+      "DAP",
+      "iPaaS",
+      "Reverse ETL",
+      "DSML"
+    ]
   }
 }
