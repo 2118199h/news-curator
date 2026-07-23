@@ -225,5 +225,28 @@
       "inflation",
       "Wall Street"
     ]
+  },
+  "custom_1784788717245": {
+    "display_name": "SaaS",
+    "language": "ja",
+    "builtin": false,
+    "companies": [
+      "Yext",
+      "Walk me",
+      "workato",
+      "boomi",
+      "Dify",
+      "Glean",
+      "Data Robot",
+      "Hightouch",
+      "Sierra",
+      "Decagon"
+    ],
+    "words": [
+      "iPaaS",
+      "DSML",
+      "DAP",
+      "Reverse ETL"
+    ]
   }
 }
