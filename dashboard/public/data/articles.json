@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-24T07:41:30.369041",
-  "total_articles": 344,
+  "generated_at": "2026-07-24T11:14:44.849055",
+  "total_articles": 347,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 473,
+      "title": "Microsoft pressures LG into killing unwanted McAfee ads",
+      "url": "https://www.theverge.com/tech/970489/lg-mcafee-ads-windows-microsoft-crackdown",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-07-24T09:20:09",
+      "fetched_at": "2026-07-24T11:14:44.697807",
+      "description": "Microsoft has intervened to stop Windows 11 users with LG monitors from being bombarded with annoying McAfee trial pop-ups. In response to complaints about the LG bloatware, Microsoft's Windows chief, Pavan Davuluri, said that LG has agreed to immediately disable the McAfee pop-up from its LG Monitor App Installer, and pledged that Microsoft will \"keep [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 471,
+      "title": "近畿大、入試にAIの利用認める　情報学部の総合型選抜で",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2607/24/2000000221/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-07-24T08:45:19",
+      "fetched_at": "2026-07-24T11:14:44.697496",
+      "description": "近畿大学は、2027年度の情報学部の総合型選抜入学試験で、生成AIの利用を認めると発表した。提出する自己PR動画やプレゼンテーション資料などでのAIの利用方針を明示した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 472,
+      "title": "AIにもサプライチェーン管理が必要？　中国AI「Kimi K3」を巡る批判でAIの調達リスクが浮き彫りに",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2607/24/news054.html",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-07-24T08:30:00",
+      "fetched_at": "2026-07-24T11:14:44.697777",
+      "description": "中国の最新AIモデルを巡り、米政府高官が、Anthropicの「Claude Fable 5」をモデルの学習に利用した“不正蒸留”が行われていたと指摘した。AIモデルの調達や導入を巡るサプライチェーンリスクが浮き彫りとなっている。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 437,
       "title": "大塚商会、バイブコーディングを活用し業務自動化プログラムを作成する「業務プロセス自動化 AIサービス」",
