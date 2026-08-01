@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T07:35:46.863999",
-  "total_articles": 320,
+  "generated_at": "2026-08-01T10:22:41.572557",
+  "total_articles": 321,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 822,
+      "title": "ahamoに「神です」との声――値段そのままで40GBに　「課金されたのかと思った」と戸惑いも",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2608/01/news010.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-08-01T09:03:00",
+      "fetched_at": "2026-08-01T10:22:41.440100",
+      "description": "NTTドコモは「ahamo」と「ドコモ mini」で料金を据え置いたままデータ容量を自動で引き上げる施策を開始した。事前手続きは不要で現行契約者にも即座に適用される。SNS上では歓迎の声が相次ぐ一方、突然の変化に対する戸惑いや通信品質の改善を望む意見も寄せられた。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 803,
       "title": "日銀の金融政策 利上げ加速が焦点",
