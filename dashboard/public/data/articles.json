@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T10:22:41.572557",
-  "total_articles": 321,
+  "generated_at": "2026-08-01T12:15:31.928964",
+  "total_articles": 323,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 824,
+      "title": "The OG reading app just got a big update",
+      "url": "https://www.theverge.com/tech/973929/instapaper-app-pastebot-spiderman-movie-installer",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-08-01T12:00:00",
+      "fetched_at": "2026-08-01T12:15:31.778780",
+      "description": "Hi, friends! Welcome to Installer No. 138, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, happy August, and also you can read all the old editions at the Installer homepage.) This week, I've been reading about microwave sounds and Meta glasses and Alex vs. Alix, testing the [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 823,
+      "title": "円相場 再び円高方向に 円安是正で日米が異例の協調対応か",
+      "url": "http://www3.nhk.or.jp/news/html/20260801/k10015193711000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-08-01T11:15:01",
+      "fetched_at": "2026-08-01T12:15:31.778532",
+      "description": "政府・日銀は、歴史的な円安に歯止めをかけるため日本時間の30日夜に市場介入に踏み切りましたが、31日夕方から1日未明にかけても急激に円高方向に動く場面が相次ぎました。アメリカの通貨当局が異例の協調対応をとったという見方が出ていて、歴史的な円安の是正に向けて日米が一致した姿勢を示した可能性があります。記事後半では経済部記者の動画解説もお伝えしています。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 822,
       "title": "ahamoに「神です」との声――値段そのままで40GBに　「課金されたのかと思った」と戸惑いも",
