@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-02T10:17:27.324713",
-  "total_articles": 322,
+  "generated_at": "2026-08-02T12:41:00.052587",
+  "total_articles": 324,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 836,
+      "title": "Foldables are sort of boring now — and that’s great news for Apple",
+      "url": "https://www.theverge.com/column/972937/foldable-phones-boring-apple",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-08-02T12:00:00",
+      "fetched_at": "2026-08-02T12:40:59.897031",
+      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on smartphones and Android, follow Dominic Preston. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Believe it or not, it didn't all start with [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 835,
+      "title": "円安是正へ日米が異例の協調介入 3日に日米共同の声明発表へ",
+      "url": "http://www3.nhk.or.jp/news/html/20260802/k10015194291000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-08-02T11:40:45",
+      "fetched_at": "2026-08-02T12:40:59.896785",
+      "description": "歴史的な円安に歯止めをかけるため政府・日銀は、7月30日から8月1日にかけて断続的に市場介入を実施しました。アメリカの通貨当局と連携し、円安の是正に向けて異例の協調介入を行ったということで政府は3日、一連の対応を踏まえた日米共同の声明を発表することにしています。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 826,
       "title": "Google、パーソナルAI「Gemini Spark」を日本でも利用可能に　Chrome統合は米国から",
