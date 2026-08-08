@@ -38,6 +38,10 @@ on:
   # （GitHubの画面 or サイトの「更新」ボタンから実行できる）
   workflow_dispatch:
 
+# 全ステップ共通の環境変数
+env:
+  TZ: "Asia/Tokyo"   # サーバーの時刻を日本時間にする（コミットメッセージ等の表示用）
+
 # ワークフローに与える権限
 permissions:
   contents: write   # データベースファイルをコミットするため

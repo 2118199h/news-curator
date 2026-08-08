@@ -12,7 +12,19 @@
 
 import os       # ファイルパス操作用
 import sqlite3  # SQLiteデータベース操作用（Python標準ライブラリ）
-from datetime import datetime, timedelta  # 日付操作用
+from datetime import datetime, timedelta, timezone  # 日付操作用
+
+# 日本時間（JST = 世界標準時+9時間）の定義
+# GitHubのサーバーは世界標準時で動いているため、
+# そのまま datetime.now() を使うと日本より9時間遅い時刻が記録されてしまう。
+# どこで実行しても日本時間になるよう、明示的にJSTを指定する。
+JST = timezone(timedelta(hours=9))
+
+
+def now_jst():
+    """現在の日本時間を「2026-08-08T13:50:00」形式の文字列で返す関数"""
+    # tzinfo を外してシンプルな文字列にする（表示・比較がしやすいため）
+    return datetime.now(JST).replace(tzinfo=None).isoformat()
 
 
 # データベースファイルのパスを決める
@@ -151,7 +163,7 @@ def save_article(conn, article_data):
         article_data["source"],
         article_data["category"],
         article_data.get("published_at"),
-        datetime.now().isoformat(),  # 現在時刻を取得日時として記録
+        now_jst(),  # 現在の日本時間を取得日時として記録
         article_data.get("description"),
         article_data.get("relevance_score", 0),
         article_data.get("summary"),
@@ -177,7 +189,7 @@ def save_run_log(conn, log_data):
                               api_scored, api_passed, errors)
         VALUES (?, ?, ?, ?, ?, ?)
     """, (
-        datetime.now().isoformat(),
+        now_jst(),
         log_data.get("total_fetched", 0),
         log_data.get("prefiltered_out", 0),
         log_data.get("api_scored", 0),
@@ -198,7 +210,7 @@ def get_recent_articles(conn, days=7):
         記事データのリスト（辞書形式）
     """
     # N日前の日付を計算
-    since = (datetime.now() - timedelta(days=days)).isoformat()
+    since = (datetime.now(JST).replace(tzinfo=None) - timedelta(days=days)).isoformat()
 
     cursor = conn.execute("""
         SELECT * FROM articles
@@ -224,7 +236,7 @@ def delete_old_articles(conn, retention_days=14):
         conn: データベース接続
         retention_days: 何日より古い記事を削除するか（デフォルト: 14日）
     """
-    cutoff = (datetime.now() - timedelta(days=retention_days)).isoformat()
+    cutoff = (datetime.now(JST).replace(tzinfo=None) - timedelta(days=retention_days)).isoformat()
 
     cursor = conn.execute(
         "DELETE FROM articles WHERE fetched_at < ?", (cutoff,)

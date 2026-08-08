@@ -26,7 +26,11 @@ import json  # JSON書き出し用
 # 出力の文字コードをUTF-8に設定する
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
-from datetime import datetime  # 現在時刻の記録用
+from datetime import datetime, timezone, timedelta  # 現在時刻の記録用
+
+# 日本時間（JST = 世界標準時+9時間）の定義
+# GitHubのサーバーは世界標準時で動くため、明示的に日本時間へ変換する
+JST = timezone(timedelta(hours=9))
 
 # 自作モジュールの読み込み
 from config_loader import load_config, get_categories, get_general_settings
@@ -79,7 +83,8 @@ def export_articles():
 
     # 出力するデータ全体の構造
     output_data = {
-        "generated_at": datetime.now().isoformat(),  # このJSONを作った日時
+        # このJSONを作った日時（日本時間）
+        "generated_at": datetime.now(JST).replace(tzinfo=None).isoformat(),
         "total_articles": len(articles),             # 記事の総数
         "categories": categories_info,               # カテゴリ情報
         "articles": articles,                        # 記事データ本体

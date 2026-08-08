@@ -19,6 +19,8 @@ export default function UpdateButton() {
   const [status, setStatus] = useState<"idle" | "running" | "done" | "error">(
     "idle"
   );
+  // 失敗した時のエラーメッセージ（原因の特定に使う）
+  const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter(); // ページ移動用
 
   /** 更新ボタンが押された時の処理 */
@@ -36,7 +38,9 @@ export default function UpdateButton() {
     try {
       await triggerUpdate(); // GitHub Actionsを起動
       setStatus("done");
-    } catch {
+    } catch (e) {
+      // エラーの内容を画面に表示する（原因がわかるように）
+      setErrorMessage(e instanceof Error ? e.message : "不明なエラー");
       setStatus("error");
     }
   }
@@ -60,10 +64,7 @@ export default function UpdateButton() {
         {status === "running" ? "起動中..." : "🔄 ニュースを更新"}
       </button>
       {status === "error" && (
-        <span className="update-status error">
-          更新の開始に失敗しました。トークンの権限（Actions: Read and
-          write）を確認してください
-        </span>
+        <span className="update-status error">{errorMessage}</span>
       )}
     </span>
   );

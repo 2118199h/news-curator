@@ -168,7 +168,18 @@ export async function triggerUpdate(): Promise<void> {
 
   // 成功時は 204 No Content が返る
   if (!response.ok) {
-    throw new Error(`更新の開始に失敗しました（${response.status}）`);
+    // エラーの種類ごとに、原因と対処法がわかるメッセージを出す
+    if (response.status === 401) {
+      throw new Error(
+        "トークンが無効です（削除または期限切れの可能性）。設定ページでトークンを登録し直してください"
+      );
+    }
+    if (response.status === 403 || response.status === 404) {
+      throw new Error(
+        "トークンの権限が不足しています。設定ページの手順で「repo」権限付きのトークンを作り直してください"
+      );
+    }
+    throw new Error(`更新の開始に失敗しました（エラーコード: ${response.status}）`);
   }
 }
 

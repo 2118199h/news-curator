@@ -81,7 +81,11 @@ export default function Home() {
     // 「前回の訪問」を記録しておき、それより新しい記事にNEWを付ける。
     // ページを再読み込みしただけでNEWが消えないよう、
     // 30分以上間が空いた時だけ「新しい訪問」とみなす。
-    const now = new Date().toISOString();
+    // ※ 記事の日時（日本時間）と比較するため、こちらも日本時間の文字列で記録する
+    const d = new Date();
+    const now = new Date(d.getTime() - d.getTimezoneOffset() * 60000)
+      .toISOString()
+      .slice(0, 19);
     const currentVisit = localStorage.getItem("visit_current"); // 直近の閲覧時刻
     const prevVisit = localStorage.getItem("visit_prev");       // 前回の訪問時刻
 

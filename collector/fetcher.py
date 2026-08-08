@@ -14,7 +14,30 @@
 # ========================================
 
 import feedparser  # RSSフィードを解析するライブラリ
-from datetime import datetime  # 日付操作用
+from datetime import datetime, timezone, timedelta  # 日付操作用
+
+# 日本時間（JST = 世界標準時+9時間）の定義
+JST = timezone(timedelta(hours=9))
+
+
+def parse_to_jst(time_struct):
+    """
+    feedparserが解析した日時（世界標準時）を日本時間に変換する関数。
+
+    feedparserの published_parsed は必ず世界標準時（UTC）で返ってくるため、
+    そのまま使うと日本より9時間遅い時刻になってしまう。
+    ここで+9時間して日本時間に直す。
+
+    引数:
+        time_struct: feedparserのpublished_parsed（time.struct_time形式）
+
+    戻り値:
+        日本時間のISO形式文字列（例: "2026-08-08T13:50:00"）
+    """
+    utc_time = datetime(*time_struct[:6], tzinfo=timezone.utc)
+    jst_time = utc_time.astimezone(JST)
+    # tzinfo を外してシンプルな文字列にする
+    return jst_time.replace(tzinfo=None).isoformat()
 
 
 def fetch_feed(feed_url, feed_name, category_id):
@@ -59,11 +82,11 @@ def fetch_feed(feed_url, feed_name, category_id):
             # 解析してくれた published_parsed を使う
             published_at = None
             if hasattr(entry, "published_parsed") and entry.published_parsed:
-                # time.struct_time 形式を datetime に変換し、ISO形式の文字列にする
-                published_at = datetime(*entry.published_parsed[:6]).isoformat()
+                # 世界標準時 → 日本時間に変換してISO形式の文字列にする
+                published_at = parse_to_jst(entry.published_parsed)
             elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
                 # published がない場合は updated（更新日時）で代用
-                published_at = datetime(*entry.updated_parsed[:6]).isoformat()
+                published_at = parse_to_jst(entry.updated_parsed)
 
             # --- 概要文の取得 ---
             # summary か description のどちらかに概要が入っている
