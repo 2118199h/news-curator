@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-07T22:32:11.206422",
-  "total_articles": 323,
+  "generated_at": "2026-08-08T04:50:30.694807",
+  "total_articles": 326,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 1125,
+      "title": "Anthropic、「Fable 5」の生物学の制限を緩和　誤検知によるフォールバックを約85％削減",
+      "url": "https://www.itmedia.co.jp/news/article/2608/08/2000000460/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-08-07T22:57:07",
+      "fetched_at": "2026-08-08T04:50:30.560800",
+      "description": "Anthropicは、AIモデル「Claude Fable 5」の生物学分野における過度な保護機能を緩和したと発表した。安全性を重視するあまり発生していた無害な質問への誤検知や下位モデルへのフォールバックを大幅に削減。専門的な二重用途研究への制限は維持しつつ、一般的な健康・教育用途での利便性を向上させた。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 1127,
+      "title": "OpenAI says it slowed Astra model development over security concerns",
+      "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/",
+      "source": "TechCrunch",
+      "category": "us_companies",
+      "published_at": "2026-08-07T22:48:24",
+      "fetched_at": "2026-08-08T04:50:30.561031",
+      "description": "OpenAI said this model, which is still in development, reached its \"critical cybersecurity threshold,\" meaning it could independently identify and carry out cyberattacks against traditionally well-protected real-world systems.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 1126,
+      "title": "OpenAI、次期モデル「Astra」の一部開発を停止　「Critical」級サイバー能力の可能性否定できず",
+      "url": "https://www.itmedia.co.jp/news/article/2608/08/2000000459/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-08-07T22:11:46",
+      "fetched_at": "2026-08-08T04:50:30.561012",
+      "description": "OpenAIは、次期主力モデル「Astra」のサイバー能力が自社の安全指針における最上位「Critical」に達している可能性を発表した。要件を満たさない一部活動を停止し、リアルタイム監視や思考過程の評価など管理を強化する。能力を抑制するのではなく、政府機関や外部組織と協力して検証と安全策の提供を進める方針だ。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 1099,
       "title": "NTTドコモ、エリクソン製の最新型装置を国内初導入",
