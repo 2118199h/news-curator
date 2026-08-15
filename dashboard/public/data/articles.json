@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-15T13:23:02.210790",
-  "total_articles": 219,
+  "generated_at": "2026-08-15T18:20:38.905915",
+  "total_articles": 221,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 1347,
+      "title": "なぜ、MUFGスタジアムは「ドコモスタジアム」じゃないのか　命名の裏に迫る",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2608/15/news006.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-08-15T14:00:00",
+      "fetched_at": "2026-08-15T18:20:38.750152",
+      "description": "2025年4月から民間運営に移行した新国立競技場は「MUFGスタジアム」と命名された。運営会社の代表企業であるNTTドコモは、あえて全体の命名権を獲得しなかった。通信や決済などのデジタルインフラ基盤を主導し、実利を刈り取る高度なエコシステム戦略が隠されている。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 1348,
+      "title": "人混み「コミケ108」に挑む3キャリア　ドコモ、KDDI、ソフトバンクがネットワーク対策公開",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2608/15/news019.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-08-15T13:23:00",
+      "fetched_at": "2026-08-15T18:20:38.750441",
+      "description": "コミケ108の混雑に向け、携帯3キャリアは移動基地局車の増強や最新ミリ波技術の導入など大規模な電波対策を実施。その具体的な内容とは。3キャリアが公開した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 1332,
       "title": "Nvidia discloses $21 billion stake in SpaceX at end of second quarter",
