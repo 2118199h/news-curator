@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T19:39:03.319471",
-  "total_articles": 235,
+  "generated_at": "2026-08-29T23:07:39.690361",
+  "total_articles": 237,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 1834,
+      "title": "The big lesson from this week's earnings: The AI buildout is not a zero-sum game",
+      "url": "https://www.cnbc.com/2026/08/29/big-lesson-from-this-weeks-earnings-ai-buildout-is-not-a-zero-sum-game.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-08-29T22:25:55",
+      "fetched_at": "2026-08-29T23:07:39.558853",
+      "description": "Salesforce, CrowdStrike, and Nvidia all faced major tests with investors and crushed expectations.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 1833,
+      "title": "Nvidia’s AI advantage is moving beyond the GPU",
+      "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
+      "source": "TechCrunch",
+      "category": "us_companies",
+      "published_at": "2026-08-29T22:00:00",
+      "fetched_at": "2026-08-29T23:07:39.558636",
+      "description": "The new generation of data center systems is increasing efficiency with smarter traffic control instead of just more processor cycles.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 1831,
       "title": "KDDIとみちのりHD、5GネットワークをAIで自動最適化　日立市の自動運転バスで検証へ",
