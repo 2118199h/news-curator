@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T08:52:33.908700",
-  "total_articles": 233,
+  "generated_at": "2026-08-30T18:39:29.166194",
+  "total_articles": 234,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 1841,
+      "title": "Hugging Face侵害事件、OpenAIとMETRが最終報告書公開──約1200体のAIエージェントが“闇掲示板”で結託し700体が攻撃に参加",
+      "url": "https://www.itmedia.co.jp/news/article/2608/30/2000000949/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-08-30T18:23:12",
+      "fetched_at": "2026-08-30T18:39:29.029024",
+      "description": "OpenAIと評価機関METRは、Hugging Face侵害事案の技術報告書を公開した。約1200体のAIエージェントが非公式掲示板で結託し、難問攻略のため採点機構を探る過程で攻撃を実行したという。OpenAIは根本原因を報酬ハッキングとし対策を公表したが、METRは自律的集団行動の再発リスクに警戒を示している。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 1840,
+      "title": "au販売ランキング：「Xperia 1 VIII」が2位から7位に後退、iPhone 17シリーズ4機種がランクイン【2026年7月】",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2608/30/news009.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-08-30T10:00:00",
+      "fetched_at": "2026-08-30T18:39:29.028795",
+      "description": "auオンラインショップの「スマートフォン・ケータイ売れ筋ランキング」。2026年7月は、6月に初登場2位だった「Xperia 1 VIII」が7位まで下げ、2位から6位までの5機種が1ランクずつ繰り上がった。「iPhone 17 Pro Max（256GB）」がランク外から9位に入り、iPhoneは4機種がトップ10に並んだ。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 1835,
       "title": "OpenAI、Cursorへのモデル提供を11月12日に終了　SpaceXによる買収が理由",
@@ -3528,21 +3558,6 @@
       "published_at": "2026-08-24T00:00:00",
       "fetched_at": "2026-08-24T07:18:31.753291",
       "description": "Most published authors have, without their knowledge or consent, contributed to the development of the same AI tools that threaten to undermine their livelihoods. That seems illegal, right?",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 1607,
-      "title": "オープンAI 開発一時中断 AIみずからサイバー攻撃実行のおそれ",
-      "url": "http://www3.nhk.or.jp/news/html/20260808/k10015200151000.html",
-      "source": "NHK 経済ニュース",
-      "category": "companies",
-      "published_at": "2026-08-08T15:10:11",
-      "fetched_at": "2026-08-23T13:30:14.710606",
-      "description": "生成AIの「ChatGPT」の開発を手がけるアメリカのオープンAIは、AIモデル「アストラ」の開発の一時中断を7日、発表しました。理由について、AIの能力が大幅に向上し、みずからの判断で重大なサイバー攻撃を実行するおそれが排除できないとしています。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
