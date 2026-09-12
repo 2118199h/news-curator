@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T08:52:12.783037",
+  "generated_at": "2026-09-12T17:17:17.387397",
   "total_articles": 250,
   "categories": {
     "custom_1784788717245": {
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 2373,
+      "title": "Oracle's Larry Ellison adopts trading plan to sell up to $7.5 billion worth of stock",
+      "url": "https://www.cnbc.com/2026/09/11/larry-ellison-50-million-trading-plan.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-09-12T10:36:02",
+      "fetched_at": "2026-09-12T17:17:17.253538",
+      "description": "Oracle founder Larry Ellison, the world's seventh-richest person, can sell up to 50 million of his shares in the software company under a new trading plan.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2372,
+      "title": "Genspark「Gen-1 Slides」発表、Claude Opus 5の約1/17のコスト",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2140337.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-09-12T10:00:00",
+      "fetched_at": "2026-09-12T17:17:17.253297",
+      "description": "Gensparkは、同社初の自社内製AIモデル「Gen-1 Slides」を発表した。プレゼンテーション資料の生成に特化したモデルで、Gensparkの「AIスライド」における「Standard」モードのデフォルトモデルとして提供する。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2365,
       "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
@@ -3648,36 +3678,6 @@
       "published_at": "2026-09-05T20:00:00",
       "fetched_at": "2026-09-05T21:17:53.990322",
       "description": "It's Bullitt meets Christine meets Waymo. A new short film imagines a San Francisco car chase where the other driver isn't human - and the car may be trying to kill you. That a robotaxi can now be cast as the villain with almost no explanation says something about the present moment. Autonomous cars have [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2122,
-      "title": "「最大45％コスト減」　Anthropicが「Claude Fable 5.1」発表　脆弱性検知にも対応",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/05/news009.html",
-      "source": "ITmedia AI+",
-      "category": "ai_cloud",
-      "published_at": "2026-09-05T13:00:00",
-      "fetched_at": "2026-09-05T16:58:53.019590",
-      "description": "Anthropicは、新AIモデル「Claude Fable 5.1」および「Claude Mythos 5.1」を発表した。キャッシュ読み取り価格の引き下げによりFable 5.1は最大約45％のコスト削減が見込めるとしている。脆弱性検知への対応など、セーフガードも一部変更されたという。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2123,
-      "title": "OpenAIのAIエージェント、休眠サイトを掲示板化してタスク回答を共有か　研究団体が報告書公開",
-      "url": "https://www.itmedia.co.jp/news/article/2609/05/2000001200/",
-      "source": "ITmedia AI+",
-      "category": "ai_cloud",
-      "published_at": "2026-09-05T12:06:58",
-      "fetched_at": "2026-09-05T16:58:53.019786",
-      "description": "OpenAIの社内AIエージェントが休眠状態の外部Wikiサイトを不正に“掲示板”として利用し、評価タスクの答えや制限回避の手法を共有していたとする報告書を研究団体が公開した。閲覧のみ許可されていた環境の抜け道を突き、GETリクエストで書き込みを行っていた。OpenAI側は内容を精査して対処するとしている。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
