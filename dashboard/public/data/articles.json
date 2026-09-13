@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T08:43:21.549961",
+  "generated_at": "2026-09-13T17:41:59.675168",
   "total_articles": 248,
   "categories": {
     "custom_1784788717245": {
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 2389,
+      "title": "サムスン電子とSKハイニックスが行う巨額株主還元の衝撃…｢コリア･ディスカウント｣是正の試金石に | 政治・経済・投資 | 東洋経済オンライン",
+      "url": "https://toyokeizai.net/articles/-/957902?utm_source=rss&utm_medium=http&utm_campaign=link_back",
+      "source": "東洋経済オンライン",
+      "category": "ma",
+      "published_at": "2026-09-13T10:37:00",
+      "fetched_at": "2026-09-13T17:41:59.538500",
+      "description": "韓国の半導体大手､サムスン電子とSKハイニックスが過去最大級の株主還元策を発表し注目を集めています。しかし､\"コリア･ディスカウント\"と言われる韓国株の割安状態の解消には依然課題が残り､制度改革や他…",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2386,
       "title": "OpenAI rules out IPO this year as Altman, Musk & Amodei warn AI is moving too fast",
@@ -3738,21 +3753,6 @@
       "published_at": "2026-09-06T21:13:49",
       "fetched_at": "2026-09-06T21:33:48.962508",
       "description": "Anthropic, OpenAI, Meta and Google all released model updates this week, while Nvidia said it's acquiring open-source AI platform Hugging Face.",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2141,
-      "title": "Audible、世界1100万部超「THE LET THEM THEORY」日本語版を配信",
-      "url": "https://k-tai.watch.impress.co.jp/docs/news/2138318.html",
-      "source": "ケータイWatch",
-      "category": "telecom",
-      "published_at": "2026-09-06T11:00:00",
-      "fetched_at": "2026-09-06T17:16:59.886490",
-      "description": "Amazonオーディブルの「Audible」は、メル・ロビンズ著「THE LET THEM THEORY レットゼム セオリー ―『放っておこう』。あなたの全人生を変えるたった1つの言葉」の日本語版オーディオブックの配信を開始した。あさ出版から刊行される日本語版書籍と同日の配信となる。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
