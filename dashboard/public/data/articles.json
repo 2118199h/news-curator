@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T17:27:00.789063",
-  "total_articles": 341,
+  "generated_at": "2026-09-19T21:50:08.505128",
+  "total_articles": 340,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 2715,
+      "title": "【キリンHDの南方社長に直撃】時価総額でアサヒに肉薄／社長が明かす“３本柱”の構築とM&A戦略／ヘルスサイエンス事業で次の一手／2200億円買収の真意／酒税額の一本化でどう戦う？／酒類事業の海外展開 | ビジネス | 東洋経済オンライン",
+      "url": "https://toyokeizai.net/articles/-/958753?utm_source=rss&utm_medium=http&utm_campaign=link_back",
+      "source": "東洋経済オンライン",
+      "category": "ma",
+      "published_at": "2026-09-19T19:00:00",
+      "fetched_at": "2026-09-19T21:50:08.357155",
+      "description": "国内ビール大手のキリンビールを傘下に持つキリンホールディングス。主力の酒類事業は、国内市場の中長期的な縮小が課題となる中、同社はヘルスサイエンス（健康関連）事業に活路を見出している。<br />10月からは、…",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2713,
       "title": "東京ゲームショウと生成AI　ゲームの祭典で商談見込むベンダーたち",
@@ -4173,36 +4188,6 @@
       "published_at": "2026-09-12T22:09:47",
       "fetched_at": "2026-09-13T08:43:21.401135",
       "description": "",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2375,
-      "title": "Where to preorder the iPhone 18 Pro and Pro Max",
-      "url": "https://www.theverge.com/gadgets/988337/iphone-18-pro-max-preorder-buy",
-      "source": "The Verge",
-      "category": "us_tech",
-      "published_at": "2026-09-12T21:00:00",
-      "fetched_at": "2026-09-12T21:35:12.990915",
-      "description": "The iPhone 18 Pro and 18 Pro Max are almost here. Announced at Apple's September 2026 \"Sunrise and shine\" event alongside the iPhone Duo and other new gear, the two upgraded phones feature the faster A20 Pro processor with more GPU power as well as more neural cores for AI-related tasks, plus some welcome improvements [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2374,
-      "title": "OpenAI just wants to win",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
-      "source": "The Verge",
-      "category": "us_companies",
-      "published_at": "2026-09-12T20:00:00",
-      "fetched_at": "2026-09-12T21:35:12.990709",
-      "description": "OpenAI has spent the last few years planting flags across the increasingly difficult terrain in mathematics. This week, it claimed one of its biggest prizes yet: a solution to a legendary Millennium Prize problem. In normal circumstances, this would have been celebrated as a historic achievement. Instead, many mathematicians have watched OpenAI's relentless advance with [&#8230;]",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
