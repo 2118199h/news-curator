@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T08:53:31.974988",
+  "generated_at": "2026-09-20T17:58:37.146022",
   "total_articles": 346,
   "categories": {
     "custom_1784788717245": {
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 2735,
+      "title": "「Jev」とは　“文章を書かないAI”がなぜ話題に？　元OpenAI研究者が開発、「“スマートなif文”と考えてみて」",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/20/2000001664/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-09-20T16:00:26",
+      "fetched_at": "2026-09-20T17:58:36.999731",
+      "description": "米スタートアップのTypeSafe AIが9月15日（現地時間）に発表したAIモデル「Jev」（ジェヴ）が、海外や日本のAIコミュニティで大きな注目を集めている。この記事では、Jevとは何か、LLMとはどう違うのかなどを整理する。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2716,
       "title": "AI人材を採用できない中小企業、専門家を「必要な時だけ」活用する支援サービス",
@@ -4158,21 +4173,6 @@
       "published_at": "2026-09-13T20:12:49",
       "fetched_at": "2026-09-13T22:36:02.352040",
       "description": "",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2389,
-      "title": "サムスン電子とSKハイニックスが行う巨額株主還元の衝撃…｢コリア･ディスカウント｣是正の試金石に | 政治・経済・投資 | 東洋経済オンライン",
-      "url": "https://toyokeizai.net/articles/-/957902?utm_source=rss&utm_medium=http&utm_campaign=link_back",
-      "source": "東洋経済オンライン",
-      "category": "ma",
-      "published_at": "2026-09-13T10:37:00",
-      "fetched_at": "2026-09-13T17:41:59.538500",
-      "description": "韓国の半導体大手､サムスン電子とSKハイニックスが過去最大級の株主還元策を発表し注目を集めています。しかし､\"コリア･ディスカウント\"と言われる韓国株の割安状態の解消には依然課題が残り､制度改革や他…",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
