@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T17:58:37.146022",
-  "total_articles": 346,
+  "generated_at": "2026-09-20T22:25:12.058957",
+  "total_articles": 349,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 2738,
+      "title": "A24’s reputation is on the line with the SCP Foundation movie",
+      "url": "https://www.theverge.com/entertainment/997853/a24-scp-movie-creative-commons-license",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-09-20T21:45:48",
+      "fetched_at": "2026-09-20T22:25:11.929524",
+      "description": "After the success of Backrooms, it looks like A24 is trying to cash in on yet another internet horror craze with a new installment in the V/H/S horror anthology series set in the SCP Foundation universe. But as soon as it was announced, the backlash started, and V/H/S: SCP already appears to be on shaky [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2737,
+      "title": "Nvidia CEO Jensen Huang emerges as Trump's top ally in AI safety debate",
+      "url": "https://www.cnbc.com/2026/09/20/nvidia-ceo-jensen-huang-emerges-as-trumps-top-ally-in-ai-debate.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-09-20T20:25:08",
+      "fetched_at": "2026-09-20T22:25:11.929488",
+      "description": "Jensen Huang's position as the leader of the world's most valuable company, has earned him Trump's ear on the most important topics in AI.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2735,
       "title": "「Jev」とは　“文章を書かないAI”がなぜ話題に？　元OpenAI研究者が開発、「“スマートなif文”と考えてみて」",
@@ -4173,6 +4203,21 @@
       "published_at": "2026-09-13T20:12:49",
       "fetched_at": "2026-09-13T22:36:02.352040",
       "description": "",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2736,
+      "title": "Audible、世界1100万部超「THE LET THEM THEORY」日本語版を配信",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2138318.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-09-06T11:00:00",
+      "fetched_at": "2026-09-20T22:25:11.929290",
+      "description": "Amazonオーディブルの「Audible」は、メル・ロビンズ著「THE LET THEM THEORY レットゼム セオリー ―『放っておこう』。あなたの全人生を変えるたった1つの言葉」の日本語版オーディオブックの配信を開始した。あさ出版から刊行される日本語版書籍と同日の配信となる。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
