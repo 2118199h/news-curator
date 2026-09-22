@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-22T09:35:20.722804",
-  "total_articles": 307,
+  "generated_at": "2026-09-22T17:57:33.607899",
+  "total_articles": 312,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,81 @@
     }
   },
   "articles": [
+    {
+      "id": 2782,
+      "title": "Apple&#8217;s first live music venue is opening beneath its UK headquarters",
+      "url": "https://www.theverge.com/tech/998581/apple-music-hall-london-venue-battersea",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-09-22T17:35:54",
+      "fetched_at": "2026-09-22T17:57:33.465354",
+      "description": "Apple is preparing to open a new \"state-of-the-art\" live music venue in the UK, a 600-capacity space for hosting performances, recording sessions, and video broadcasts. The venue, called Apple Music Hall, is located underneath Apple's European headquarters in London's iconic Battersea Power Station, and is set to open next week on September 28th. Details about [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2781,
+      "title": "Morphotonics raises €40M to expand its display tech into data centers",
+      "url": "https://techcrunch.com/2026/09/21/morphotonics-raises-e40m-as-it-tk-tk-tk-t/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-09-22T15:00:00",
+      "fetched_at": "2026-09-22T17:57:33.465325",
+      "description": "Deeptech company Morphotonics raises €40M from investors including 3M Ventures, Innovation Industries, BOM, and Invest-NL.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2778,
+      "title": "OpenAI、数学者の独立諮問グループと連携　内部モデルは「100件超の未解決問題を解決」",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001671/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-09-22T11:49:24",
+      "fetched_at": "2026-09-22T17:57:33.465045",
+      "description": "OpenAIは、数学者が設立した独立組織「AGMAI」と連携し、AIによる数学的成果の評価や公表方法について助言を受けると発表した。社内モデルによる100件以上の未解決問題解決を受けた動きで、急速な成果発表や帰属問題を巡る数学界からの批判に対応する。組織は独立して運営され、他社への助言も行う方針だ。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2780,
+      "title": "Tesla makes a move on Southeast Asia's largest EV market. A homegrown giant awaits",
+      "url": "https://www.cnbc.com/2026/09/22/tesla-vinfast-ev-vietnam.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-09-22T11:22:23",
+      "fetched_at": "2026-09-22T17:57:33.465294",
+      "description": "Tesla recently set up a subsidiary in Vietnam, taking a step toward a potential entry into a fast-growing EV market dominated by homegrown rival VinFast.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 2779,
+      "title": "OpenAI、フロンティアAIの国際標準づくりを米国主導で進めるよう提言　「RSIはまだ起きていない」",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001670/",
+      "source": "ITmedia AI+",
+      "category": "ai_cloud",
+      "published_at": "2026-09-22T10:51:09",
+      "fetched_at": "2026-09-22T17:57:33.465272",
+      "description": "た。各国のAI安全性研究所の連携などを提案し、制御不能な自律的進化を防ぐ枠組みを求める。アルトマンCEOは国連安保理の公開会合でも発言する予定だ。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2768,
       "title": "SpaceXAI、「Grok 4.7」発表　コーディングと知識労働向けで同社最高性能、価格は据え置き",
