@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T17:59:04.762011",
+  "generated_at": "2026-09-26T22:35:09.229904",
   "total_articles": 243,
   "categories": {
     "custom_1784788717245": {
@@ -3355,14 +3355,14 @@
       "filter_reason": null
     },
     {
-      "id": 2715,
-      "title": "【キリンHDの南方社長に直撃】時価総額でアサヒに肉薄／社長が明かす“３本柱”の構築とM&A戦略／ヘルスサイエンス事業で次の一手／2200億円買収の真意／酒税額の一本化でどう戦う？／酒類事業の海外展開 | ビジネス | 東洋経済オンライン",
-      "url": "https://toyokeizai.net/articles/-/958753?utm_source=rss&utm_medium=http&utm_campaign=link_back",
-      "source": "東洋経済オンライン",
-      "category": "ma",
-      "published_at": "2026-09-19T19:00:00",
-      "fetched_at": "2026-09-19T21:50:08.357155",
-      "description": "国内ビール大手のキリンビールを傘下に持つキリンホールディングス。主力の酒類事業は、国内市場の中長期的な縮小が課題となる中、同社はヘルスサイエンス（健康関連）事業に活路を見出している。<br />10月からは、…",
+      "id": 2958,
+      "title": "Genspark「Gen-1 Slides」発表、Claude Opus 5の約1/17のコスト",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2140337.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-09-12T10:00:00",
+      "fetched_at": "2026-09-26T22:35:09.094314",
+      "description": "Gensparkは、同社初の自社内製AIモデル「Gen-1 Slides」を発表した。プレゼンテーション資料の生成に特化したモデルで、Gensparkの「AIスライド」における「Standard」モードのデフォルトモデルとして提供する。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
