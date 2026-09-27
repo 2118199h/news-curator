@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-27T18:43:40.996419",
-  "total_articles": 234,
+  "generated_at": "2026-09-27T23:31:29.465420",
+  "total_articles": 232,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 2970,
+      "title": "Googlebooks might be the real deal",
+      "url": "https://www.theverge.com/tech/1000424/googlebooks-meta-ray-ban-audio-control-resonant-microsoft-surface-mouse",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-09-27T21:00:00",
+      "fetched_at": "2026-09-27T23:31:29.316616",
+      "description": "Hi, friends! Welcome to Installer No. 145, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, I'm happy to be done traveling for a bit, and also you can read all the old editions at the Installer homepage.) This week, I flew to San Francisco to try out [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 2968,
       "title": "PNOE’s new face mask wants to make lab-grade breath testing a self-serve affair",
@@ -3295,36 +3310,6 @@
       "filter_reason": null
     },
     {
-      "id": 2738,
-      "title": "A24’s reputation is on the line with the SCP Foundation movie",
-      "url": "https://www.theverge.com/entertainment/997853/a24-scp-movie-creative-commons-license",
-      "source": "The Verge",
-      "category": "us_tech",
-      "published_at": "2026-09-20T21:45:48",
-      "fetched_at": "2026-09-20T22:25:11.929524",
-      "description": "After the success of Backrooms, it looks like A24 is trying to cash in on yet another internet horror craze with a new installment in the V/H/S horror anthology series set in the SCP Foundation universe. But as soon as it was announced, the backlash started, and V/H/S: SCP already appears to be on shaky [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2737,
-      "title": "Nvidia CEO Jensen Huang emerges as Trump's top ally in AI safety debate",
-      "url": "https://www.cnbc.com/2026/09/20/nvidia-ceo-jensen-huang-emerges-as-trumps-top-ally-in-ai-debate.html",
-      "source": "CNBC Technology",
-      "category": "us_companies",
-      "published_at": "2026-09-20T20:25:08",
-      "fetched_at": "2026-09-20T22:25:11.929488",
-      "description": "Jensen Huang's position as the leader of the world's most valuable company, has earned him Trump's ear on the most important topics in AI.",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
       "id": 2958,
       "title": "Genspark「Gen-1 Slides」発表、Claude Opus 5の約1/17のコスト",
       "url": "https://k-tai.watch.impress.co.jp/docs/news/2140337.html",
@@ -3528,21 +3513,6 @@
       "published_at": "2026-09-07T12:00:56",
       "fetched_at": "2026-09-22T00:35:35.751550",
       "description": "楽天モバイルは5日、公式サイトでKDDIとのローミングエリアに関する方針を改めて案内した。自社回線の展開に時間を要するエリアでは、10月以降もKDDI回線によるローミングが継続される。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 2736,
-      "title": "Audible、世界1100万部超「THE LET THEM THEORY」日本語版を配信",
-      "url": "https://k-tai.watch.impress.co.jp/docs/news/2138318.html",
-      "source": "ケータイWatch",
-      "category": "telecom",
-      "published_at": "2026-09-06T11:00:00",
-      "fetched_at": "2026-09-20T22:25:11.929290",
-      "description": "Amazonオーディブルの「Audible」は、メル・ロビンズ著「THE LET THEM THEORY レットゼム セオリー ―『放っておこう』。あなたの全人生を変えるたった1つの言葉」の日本語版オーディオブックの配信を開始した。あさ出版から刊行される日本語版書籍と同日の配信となる。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
