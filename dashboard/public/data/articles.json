@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T18:35:41.934817",
-  "total_articles": 336,
+  "generated_at": "2026-10-03T23:06:58.881226",
+  "total_articles": 340,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 3297,
+      "title": "All the AI agents that can live in your text messages",
+      "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-10-03T23:00:00",
+      "fetched_at": "2026-10-03T23:06:58.739237",
+      "description": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 3298,
+      "title": "Spotify billionaire’s body scan startup has come to America",
+      "url": "https://techcrunch.com/2026/10/03/spotify-billionaires-body-scan-startup-has-come-to-america/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-10-03T23:00:00",
+      "fetched_at": "2026-10-03T23:06:58.739265",
+      "description": "Farooq Abbasi, an investor in Neko Health, talked to Equity about the hot health tech company and what's next for it.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 3296,
+      "title": "Tesla’s Cybercab had a rocky first month in Austin. Now comes the hard part: expanding",
+      "url": "https://www.cnbc.com/2026/10/03/tesla-cybercab-pressure-to-expand-after-rocky-first-month-in-austin.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-10-03T20:00:01",
+      "fetched_at": "2026-10-03T23:06:58.739207",
+      "description": "Elon Musk's effort to move beyond auto sales largely relies on the success of his company's Cybercab, which launched in Austin a month ago.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 3291,
       "title": "Amazon、データセンター批判に反論　10億ドル超の地域支援策も発表",
@@ -4375,6 +4420,21 @@
       "filter_reason": null
     },
     {
+      "id": 3294,
+      "title": "「NURO」が横浜アリーナの通信環境をサポート、アイドル×ファッションイベントで",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2142300.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-09-19T09:00:00",
+      "fetched_at": "2026-10-03T23:06:58.738893",
+      "description": "ソニーネットワークコミュニケーションズは、通信サービスブランド「NURO」が、20日に横浜アリーナで開催される「第4回 IDOL RUNWAY COLLECTION 2026 AUTUMN/WINTER Supported by TGC」に協賛すると発表した。会場にネットワーク回線を提供し、通信環境をサポートする。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
       "id": 3258,
       "title": "Apple Watchが5Gで通話できる、ソフトバンクが提供開始",
       "url": "https://k-tai.watch.impress.co.jp/docs/news/2142087.html",
@@ -4690,21 +4750,6 @@
       "filter_reason": null
     },
     {
-      "id": 2958,
-      "title": "Genspark「Gen-1 Slides」発表、Claude Opus 5の約1/17のコスト",
-      "url": "https://k-tai.watch.impress.co.jp/docs/news/2140337.html",
-      "source": "ケータイWatch",
-      "category": "telecom",
-      "published_at": "2026-09-12T10:00:00",
-      "fetched_at": "2026-09-26T22:35:09.094314",
-      "description": "Gensparkは、同社初の自社内製AIモデル「Gen-1 Slides」を発表した。プレゼンテーション資料の生成に特化したモデルで、Gensparkの「AIスライド」における「Standard」モードのデフォルトモデルとして提供する。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
       "id": 3292,
       "title": "株価 小幅に値下がり",
       "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199011000.html",
@@ -4713,6 +4758,21 @@
       "published_at": "2026-08-07T16:32:49",
       "fetched_at": "2026-10-03T18:35:41.797837",
       "description": "7日の東京株式市場、日経平均株価は小幅に値下がりしました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 3295,
+      "title": "4月-6月決算ピーク イラン情勢の不透明感後退で上方修正相次ぐ",
+      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199191000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-08-07T15:49:08",
+      "fetched_at": "2026-10-03T23:06:58.739161",
+      "description": "上場企業のことし4月から6月の決算発表がピークを迎え、原油の先物価格が一時期より下落していることなどから今年度の業績見通しを上方修正する企業が相次いでいます。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
