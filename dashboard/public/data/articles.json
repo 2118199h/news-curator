@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-18T17:28:40.693145",
-  "total_articles": 288,
+  "generated_at": "2026-10-18T21:56:23.303444",
+  "total_articles": 289,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 3891,
+      "title": "Cities want to put the boot on robotaxis",
+      "url": "https://www.theverge.com/transportation/1013220/robotaxi-self-driving-car-laws",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-10-18T21:00:00",
+      "fetched_at": "2026-10-18T21:56:23.146855",
+      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on autonomous vehicles, policy, and road rules, follow Andrew J. Hawkins. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepback here. How it started The first state to pass a law [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 3889,
       "title": "ドコモ純正「3ポートACアダプタ02M」が20％オフ　ノートPCも充電できる",
