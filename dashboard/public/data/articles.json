@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-25T17:52:46.075612",
-  "total_articles": 279,
+  "generated_at": "2026-10-25T22:31:05.189487",
+  "total_articles": 281,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 4172,
+      "title": "Google’s AI search changes upended online publishing",
+      "url": "https://www.theverge.com/column/1017983/google-ai-search-online-publishing",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-10-25T21:00:00",
+      "fetched_at": "2026-10-25T22:31:04.989595",
+      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more about AI's impact on the web, follow Emma Roth. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started The digital publishing industry has relied on [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4171,
+      "title": "「5年でバッテリーが使い物にならなくなる」は本当か　テスラ「モデル3」5年目点検で分かったこと",
+      "url": "https://www.itmedia.co.jp/news/article/2610/25/2000002569/",
+      "source": "ITmedia NEWS",
+      "category": "companies",
+      "published_at": "2026-10-25T20:37:30",
+      "fetched_at": "2026-10-25T22:31:04.989547",
+      "description": "納車から5年、4万km余りを走った筆者のTesla「Model 3」が2回目の車検を迎えました。ユーザー車検に臨む前に点検整備を受けたところ、バッテリーの状態や維持費に具体的な数字が出ました。欧州車を30年乗り継ぎ、トラブルと出費に身構えてきた筆者には、同じ距離を走った前の愛車との違いが際立って見えます。アプリを軸に進む点検の流れと併せてお伝えします。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4170,
+      "title": "ドコモ、緊急速報「エリアメール」完全再開",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2150985.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-10-25T20:34:43",
+      "fetched_at": "2026-10-25T22:31:04.989218",
+      "description": "NTTドコモは、緊急メンテナンスのため、一時的に提供を止めていた緊急速報「エリアメール」について、25日20時1分に再開した。25日午前時点では、26日未明〜朝方の再開が見込まれていたが、作業の完了によって前倒しでの復旧となった。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 4167,
       "title": "ドコモ、一部停止中の「エリアメール」は10月26日朝に再開へ",
@@ -4098,21 +4143,6 @@
       "published_at": "2026-10-18T22:25:01",
       "fetched_at": "2026-10-19T08:54:13.276738",
       "description": "During a rally on Saturday, October 17th, in Highland Heights, Kentucky, Donald Trump bragged about how much more powerful and influential he was during his second term. While listing off his accomplishments, he mentioned his decision to rename the Gulf of Mexico and Lake Ontario. \"This is a much more powerful term. I can do [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 3891,
-      "title": "Cities want to put the boot on robotaxis",
-      "url": "https://www.theverge.com/transportation/1013220/robotaxi-self-driving-car-laws",
-      "source": "The Verge",
-      "category": "us_tech",
-      "published_at": "2026-10-18T21:00:00",
-      "fetched_at": "2026-10-18T21:56:23.146855",
-      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on autonomous vehicles, policy, and road rules, follow Andrew J. Hawkins. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepback here. How it started The first state to pass a law [&#8230;]",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
