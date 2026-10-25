@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-25T08:58:52.325431",
-  "total_articles": 278,
+  "generated_at": "2026-10-25T17:52:46.075612",
+  "total_articles": 279,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 4167,
+      "title": "ドコモ、一部停止中の「エリアメール」は10月26日朝に再開へ",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2150961.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-10-25T12:14:08",
+      "fetched_at": "2026-10-25T17:52:45.964102",
+      "description": "NTTドコモは、緊急メンテナンスに伴い一時停止している緊急速報「エリアメール」の一部サービスについて、10月26日未明から朝方にかけて再開する見込みであることを明らかにした。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4168,
+      "title": "ソフトバンク、緊急地震速報と津波警報を再開　災害・避難情報は停止継続",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2150959.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-10-25T11:48:30",
+      "fetched_at": "2026-10-25T17:52:45.964320",
+      "description": "ソフトバンクは10月25日、システムメンテナンスに伴い配信を停止していた「緊急速報メール」について、気象庁が配信する緊急地震速報および津波警報の配信を再開したと発表した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4169,
+      "title": "ドコモ「Starlink Direct」、海外5カ国に拡大　iPhoneやPixelなど48機種に対応",
+      "url": "https://k-tai.watch.impress.co.jp/docs/news/2150676.html",
+      "source": "ケータイWatch",
+      "category": "telecom",
+      "published_at": "2026-10-25T10:00:00",
+      "fetched_at": "2026-10-25T17:52:45.964349",
+      "description": "NTTドコモは、衛星とスマートフォンの直接通信サービス「docomo Starlink Direct」の国際ローミング対応国に、ニュージーランドとオーストラリアを追加した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 4156,
       "title": "「dポイントクラブ」「d払い」に「箱根駅伝」デザイン登場、獲得ポイントの6％をドコモが寄付",
@@ -4075,21 +4120,6 @@
       "filter_reason": null
     },
     {
-      "id": 3889,
-      "title": "ドコモ純正「3ポートACアダプタ02M」が20％オフ　ノートPCも充電できる",
-      "url": "https://www.itmedia.co.jp/mobile/articles/2610/18/news008.html",
-      "source": "ITmedia Mobile",
-      "category": "telecom",
-      "published_at": "2026-10-18T10:00:00",
-      "fetched_at": "2026-10-18T17:28:40.527494",
-      "description": "NTTドコモ純正「3ポートACアダプタ02M」がAmazonで販売されている。ノートPCやスマホなど最大65W出力の3台同時充電が可能で、ショートや過熱を防ぐ安全機能も備えている。現在は20％オフの3199円で提供中だ。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
       "id": 3930,
       "title": "オープンAI 開発一時中断 AIみずからサイバー攻撃実行のおそれ",
       "url": "http://www3.nhk.or.jp/news/html/20260808/k10015200151000.html",
@@ -4203,21 +4233,6 @@
       "published_at": "2026-08-07T20:00:19",
       "fetched_at": "2026-10-19T08:54:13.276700",
       "description": "大手電機メーカーの「シャープ」は、イラン情勢や円安の影響による原材料や燃料価格の高騰で、今年度の業績予想を下方修正し、最終的な利益が、当初の予想から40％余り減少するとの見通しを明らかにしました。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 3890,
-      "title": "4月-6月決算ピーク イラン情勢の不透明感後退で上方修正相次ぐ",
-      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199191000.html",
-      "source": "NHK 経済ニュース",
-      "category": "market",
-      "published_at": "2026-08-07T15:49:08",
-      "fetched_at": "2026-10-18T17:28:40.527751",
-      "description": "上場企業のことし4月から6月の決算発表がピークを迎え、原油の先物価格が一時期より下落していることなどから今年度の業績見通しを上方修正する企業が相次いでいます。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
