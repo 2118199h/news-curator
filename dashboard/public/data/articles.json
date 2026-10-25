@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-25T22:31:05.189487",
-  "total_articles": 281,
+  "generated_at": "2026-10-26T08:47:50.722667",
+  "total_articles": 286,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,81 @@
     }
   },
   "articles": [
+    {
+      "id": 4175,
+      "title": "iFixit&#8217;s look inside the iPhone Duo may explain those broken screens and hinges",
+      "url": "https://www.theverge.com/tech/1018233/ifixit-iphone-duo-teardown-repairability-hinge",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-10-26T06:40:27",
+      "fetched_at": "2026-10-26T08:47:50.562490",
+      "description": "As is tradition, iFixit has torn open the latest iPhone and laid its parts bare on a table. It found some interesting details about how Apple might be hiding the crease on the Duo's folding screen and gave it a 5/10 repairability score. That might not seem particularly high, but it's the best score the [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4173,
+      "title": "TOPIX除外予備軍､すでに始まっている｢敗者復活戦｣…浮動株比率向上を見据えた｢株式売り出し｣が相次ぐ | ビジネス | 東洋経済オンライン",
+      "url": "https://toyokeizai.net/articles/-/962173?utm_source=rss&utm_medium=http&utm_campaign=link_back",
+      "source": "東洋経済オンライン",
+      "category": "ma",
+      "published_at": "2026-10-26T06:00:00",
+      "fetched_at": "2026-10-26T08:47:50.562238",
+      "description": "構成銘柄の大規模入れ替えが発表されたTOPIX（東証株価指数）。流動性や時価総額が新たな選定基準に届かず、このほど683銘柄が除外予備軍（移行措置銘柄）に指定された。TOPIXへの組み入れ比率が徐々…",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4176,
+      "title": "A YouTuber dissected an iPhone Duo and thinks he found the cause of crackgate",
+      "url": "https://www.theverge.com/tech/1018290/dissected-iphone-duo-crackgate-hinge-screen",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-10-26T05:16:19",
+      "fetched_at": "2026-10-26T08:47:50.562522",
+      "description": "Social media and the iPhone Duo subreddit are filled with reports of Apple's foldable failing quickly and in spectacular fashion. Some users report having the phone for only a few hours before the hinge seems to catch on something, then audibly crack and break the screen. Tellingly, the cracks all seem to happen in the [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4174,
+      "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+      "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-10-26T01:57:32",
+      "fetched_at": "2026-10-26T08:47:50.562465",
+      "description": "\"Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.\"",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4177,
+      "title": "Now you can watch Instagram Reels on your Apple TV",
+      "url": "https://www.theverge.com/tech/1018253/now-you-can-watch-instagram-reels-on-your-apple-tv",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-10-26T01:20:17",
+      "fetched_at": "2026-10-26T08:47:50.562551",
+      "description": "Instagram is continuing its expansion into living rooms with Instagram for TV, for Apple TV. The company first started testing a version of the platform focused on Reels, live streams, and other video content, blown up for a bigger screen in December of last year. Then, in June, it launched a slew of new features [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 4172,
       "title": "Google’s AI search changes upended online publishing",
