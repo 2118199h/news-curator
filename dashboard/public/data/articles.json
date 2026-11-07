@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-07T10:35:41.853568",
-  "total_articles": 299,
+  "generated_at": "2026-11-07T19:50:26.367766",
+  "total_articles": 301,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 4763,
+      "title": "「povoの新規加入が非常に順調に伸びている」背景は？　今後は「2枚目→メイン」利用狙う――KDDI松田社長",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2611/07/news019.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-11-07T16:47:00",
+      "fetched_at": "2026-11-07T19:50:26.224969",
+      "description": "KDDIは決算説明会でオンライン専用料金サービスpovo2.0の成長戦略を明らかにした。単一SIMの契約者へ通信の比較機会として2枚目SIMを提案。利用者を副回線からメイン回線へ移行させる段階的な育成を狙う。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4764,
+      "title": "もう一度使いたい「auのケータイ」はどれ？　KDDI公式X反響　“INFOBAR”にG'zOne”――他にも名機たくさん",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2611/07/news014.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-11-07T11:35:00",
+      "fetched_at": "2026-11-07T19:50:26.225193",
+      "description": "KDDIは公式Xアカウントで復活してほしいauの推しケータイをファンに問いかけた。INFOBARなどのデザイン端末や耐久性に優れたモデルに復活を望む声が殺到した。ユーザーは思い出深い名機への感謝や基本機能に特化したガラホの供給を求めている。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 4765,
+      "title": "Crusoe sells troubled Wyoming data center project to Google",
+      "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+      "source": "TechCrunch",
+      "category": "us_tech",
+      "published_at": "2026-11-07T10:40:28",
+      "fetched_at": "2026-11-07T19:50:26.225209",
+      "description": "The deal highlights the challenges of developing massive AI data centers.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 4746,
       "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
@@ -4278,21 +4323,6 @@
       "published_at": "2026-11-01T00:00:00",
       "fetched_at": "2026-11-01T09:40:45.516764",
       "description": "While the new touch-enabled MacBook Pro with the PROLED XDR screen is available for preorder across a few major retailers, Best Buy is sweetening the deal by including a $100 gift card. The gift card will be automatically added to your cart when you preorder one of Apple’s highest-end laptops available in 14- or 16-inch [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 4464,
-      "title": "半導体大手インテル 株価29%急落",
-      "url": "https://news.yahoo.co.jp/pickup/6600804?source=rss",
-      "source": "Yahoo!ニュース ビジネス",
-      "category": "market",
-      "published_at": "2026-10-31T13:17:02",
-      "fetched_at": "2026-10-31T19:06:09.870850",
-      "description": "",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
