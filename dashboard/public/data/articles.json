@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-08T10:03:51.285559",
-  "total_articles": 293,
+  "generated_at": "2026-11-08T19:58:32.809866",
+  "total_articles": 289,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 4776,
+      "title": "ドコモがahamoサイトの緊急メンテナンスを完了　「サイトの安全性が確認できた」ため",
+      "url": "https://www.itmedia.co.jp/mobile/articles/2611/08/news006.html",
+      "source": "ITmedia Mobile",
+      "category": "telecom",
+      "published_at": "2026-11-08T13:32:00",
+      "fetched_at": "2026-11-08T19:58:32.680404",
+      "description": "NTTドコモが11月8日、ahamoサイトで実施していた緊急メンテナンスが完了したことを案内した。予防的措置として11月6日17時26分頃からからサービスを一時停止していた。サイトの安全性が確認できたことから、サービスを再開した。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 4773,
       "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
@@ -4240,51 +4255,6 @@
       "filter_reason": null
     },
     {
-      "id": 4487,
-      "title": "Companies promised AI gains— here's how the payoff showed up in earnings",
-      "url": "https://www.cnbc.com/2026/11/01/ai-investments-company-earnings.html",
-      "source": "CNBC Technology",
-      "category": "us_market",
-      "published_at": "2026-11-01T15:00:01",
-      "fetched_at": "2026-11-01T19:57:47.839872",
-      "description": "Santander, Novartis and other companies say AI is beginning to boost revenue, cut costs or improve profitability as investors seek returns.",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 4483,
-      "title": "Leminoでボクシング「フェニックスバトル163」を独占生配信、11月10日から",
-      "url": "https://k-tai.watch.impress.co.jp/docs/news/2152798.html",
-      "source": "ケータイWatch",
-      "category": "telecom",
-      "published_at": "2026-11-01T12:00:00",
-      "fetched_at": "2026-11-01T19:57:47.839597",
-      "description": "WOWOW Leminoは、映像配信サービス「Lemino」の有料プラン「Leminoプレミアム」で、ボクシング興行「NTTドコモ Presents Lemino BOXING PHOENIX BATTLE 163」を11月10日17時45分から独占生配信すると発表した。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 4486,
-      "title": "Data centers are now a midterm issue, even in Brooklyn",
-      "url": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
-      "source": "TechCrunch",
-      "category": "us_tech",
-      "published_at": "2026-11-01T11:22:10",
-      "fetched_at": "2026-11-01T19:57:47.839854",
-      "description": "At a Brooklyn midterm party five days before Election Day, every conversation, from a council member’s fireside chat to a debate about the Democratic Party, kept circling back to AI and data centers.",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
       "id": 4550,
       "title": "オープンAI 開発一時中断 AIみずからサイバー攻撃実行のおそれ",
       "url": "http://www3.nhk.or.jp/news/html/20260808/k10015200151000.html",
@@ -4405,21 +4375,6 @@
       "filter_reason": null
     },
     {
-      "id": 4484,
-      "title": "株価 小幅に値下がり",
-      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199011000.html",
-      "source": "NHK 経済ニュース",
-      "category": "market",
-      "published_at": "2026-08-07T16:32:49",
-      "fetched_at": "2026-11-01T19:57:47.839819",
-      "description": "7日の東京株式市場、日経平均株価は小幅に値下がりしました。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
       "id": 4488,
       "title": "4月-6月決算ピーク イラン情勢の不透明感後退で上方修正相次ぐ",
       "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199191000.html",
@@ -4428,21 +4383,6 @@
       "published_at": "2026-08-07T15:49:08",
       "fetched_at": "2026-11-02T00:42:00.916040",
       "description": "上場企業のことし4月から6月の決算発表がピークを迎え、原油の先物価格が一時期より下落していることなどから今年度の業績見通しを上方修正する企業が相次いでいます。",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 4485,
-      "title": "4月30日の市場介入 6兆円余 円買いとして1日あたりで過去最大",
-      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015198801000.html",
-      "source": "NHK 経済ニュース",
-      "category": "market",
-      "published_at": "2026-08-07T10:30:00",
-      "fetched_at": "2026-11-01T19:57:47.839847",
-      "description": "政府・日銀がことし4月30日に加え、大型連休中の5月4日と6日に市場介入を行ったことが分かりました。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
