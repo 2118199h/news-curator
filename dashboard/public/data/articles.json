@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T10:30:07.031975",
+  "generated_at": "2026-11-15T20:42:14.535776",
   "total_articles": 340,
   "categories": {
     "custom_1784788717245": {
@@ -54,6 +54,21 @@
     }
   },
   "articles": [
+    {
+      "id": 5116,
+      "title": "Megaspeed says Alice Huang left in 2025 as it launches internal probe into reports about its business",
+      "url": "https://www.cnbc.com/2026/11/15/megaspeed-alice-huang-probe-nvidia-scandal.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-11-15T17:34:46",
+      "fetched_at": "2026-11-15T20:42:14.405102",
+      "description": "The Singapore-based cloud computing company has faced heightened scrutiny since reports linked Nvidia's Jensen Huang to former Megaspeed executive Alice Huang.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 5106,
       "title": "Where was Nvidia’s security team?",
@@ -4773,21 +4788,6 @@
       "published_at": "2026-11-09T00:00:30",
       "fetched_at": "2026-11-09T00:43:42.744624",
       "description": "Code in the iOS 27.3 beta suggests that Apple could add support for chatbots to its smart home hub. There's a flag listed for a \"Conversational Apps\" category. While there are no details about what apps would fall under that heading, it seems reasonable that AI chatbots like ChatGPT and Claude could be added to [&#8230;]",
-      "relevance_score": 3,
-      "summary": null,
-      "keywords": null,
-      "is_filtered_out": 0,
-      "filter_reason": null
-    },
-    {
-      "id": 4776,
-      "title": "ドコモがahamoサイトの緊急メンテナンスを完了　「サイトの安全性が確認できた」ため",
-      "url": "https://www.itmedia.co.jp/mobile/articles/2611/08/news006.html",
-      "source": "ITmedia Mobile",
-      "category": "telecom",
-      "published_at": "2026-11-08T13:32:00",
-      "fetched_at": "2026-11-08T19:58:32.680404",
-      "description": "NTTドコモが11月8日、ahamoサイトで実施していた緊急メンテナンスが完了したことを案内した。予防的措置として11月6日17時26分頃からからサービスを一時停止していた。サイトの安全性が確認できたことから、サービスを再開した。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
