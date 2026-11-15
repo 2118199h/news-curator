@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-15T20:42:14.535776",
-  "total_articles": 340,
+  "generated_at": "2026-11-16T01:01:19.081761",
+  "total_articles": 344,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,51 @@
     }
   },
   "articles": [
+    {
+      "id": 5121,
+      "title": "The Sony Aibo was a robot revolution dressed like a dog",
+      "url": "https://www.theverge.com/podcast/1033948/sony-aibo-robot-dog-version-history",
+      "source": "The Verge",
+      "category": "us_tech",
+      "published_at": "2026-11-15T22:57:30",
+      "fetched_at": "2026-11-16T01:01:18.979866",
+      "description": "In the 1990s, Sony was absolutely convinced that we were on the precipice of a robot takeover. Pretty soon, the company decided, we'd all be living among countless humanoid robots. Some would be our coworkers; others would be our friends; and at least one would be our pet. And \"pet\" was exactly what Sony was [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 5119,
+      "title": "An overview of Jensen Huang’s messy days",
+      "url": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+      "source": "The Verge",
+      "category": "us_companies",
+      "published_at": "2026-11-15T22:00:00",
+      "fetched_at": "2026-11-16T01:01:18.979814",
+      "description": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on Jensen Huang's resignation and the fallout from Nvidia's leadership crisis, follow Terrence O'Brien. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started On October [&#8230;]",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 5120,
+      "title": "Anthropic’s IPO lands as the embattled AI trade looks for a much-needed bright spot",
+      "url": "https://www.cnbc.com/2026/11/15/anthropic-ipo-is-make-or-break-for-the-technology-industry.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-11-15T21:00:01",
+      "fetched_at": "2026-11-16T01:01:18.979837",
+      "description": "Anthropic's IPO has outsized importance in the tech industry, which is heavily invested in the AI lab and is desperate for some positive momentum.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 5116,
       "title": "Megaspeed says Alice Huang left in 2025 as it launches internal probe into reports about its business",
@@ -4780,14 +4825,29 @@
       "filter_reason": null
     },
     {
-      "id": 4777,
-      "title": "Chatbots might be coming to Apple’s HomeView",
-      "url": "https://www.theverge.com/tech/1029526/chatbots-might-be-coming-to-apples-homeview",
-      "source": "The Verge",
-      "category": "us_tech",
-      "published_at": "2026-11-09T00:00:30",
-      "fetched_at": "2026-11-09T00:43:42.744624",
-      "description": "Code in the iOS 27.3 beta suggests that Apple could add support for chatbots to its smart home hub. There's a flag listed for a \"Conversational Apps\" category. While there are no details about what apps would fall under that heading, it seems reasonable that AI chatbots like ChatGPT and Claude could be added to [&#8230;]",
+      "id": 5117,
+      "title": "株価 小幅に値下がり",
+      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015199011000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-08-07T16:32:49",
+      "fetched_at": "2026-11-16T01:01:18.979614",
+      "description": "7日の東京株式市場、日経平均株価は小幅に値下がりしました。",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 5118,
+      "title": "4月30日の市場介入 6兆円余 円買いとして1日あたりで過去最大",
+      "url": "http://www3.nhk.or.jp/news/html/20260807/k10015198801000.html",
+      "source": "NHK 経済ニュース",
+      "category": "market",
+      "published_at": "2026-08-07T10:30:00",
+      "fetched_at": "2026-11-16T01:01:18.979804",
+      "description": "政府・日銀がことし4月30日に加え、大型連休中の5月4日と6日に市場介入を行ったことが分かりました。",
       "relevance_score": 3,
       "summary": null,
       "keywords": null,
