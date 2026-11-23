@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-23T11:12:55.328889",
-  "total_articles": 304,
+  "generated_at": "2026-11-23T18:51:22.342335",
+  "total_articles": 306,
   "categories": {
     "custom_1784788717245": {
       "display_name": "SaaS",
@@ -54,6 +54,36 @@
     }
   },
   "articles": [
+    {
+      "id": 5446,
+      "title": "Anthropic, Nvidia shares rise in premarket trading after major tech selloff",
+      "url": "https://www.cnbc.com/2026/11/23/anthropic-nvidia-shares.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-11-23T18:40:28",
+      "fetched_at": "2026-11-23T18:51:22.206064",
+      "description": "The Nasdaq slid 10% last week in its worst week since the early days of Covid in 2020.",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
+    {
+      "id": 5447,
+      "title": "U.S. probes Megaspeed, Alice Huang as new figure emerges in Nvidia chip case",
+      "url": "https://www.cnbc.com/2026/11/23/nvidia-megaspeed-chipmaker-us.html",
+      "source": "CNBC Technology",
+      "category": "us_companies",
+      "published_at": "2026-11-23T14:08:03",
+      "fetched_at": "2026-11-23T18:51:22.206263",
+      "description": "The U.S. is investigating Megaspeed and Alice Huang after it emerged a former associate of hers was reportedly \"deeply involved\" in the firm's activities",
+      "relevance_score": 3,
+      "summary": null,
+      "keywords": null,
+      "is_filtered_out": 0,
+      "filter_reason": null
+    },
     {
       "id": 5440,
       "title": "ソフトバンクGが26年中の買収完了目指す｢ABBロボット事業｣､中国当局の阻止で白紙となった場合の選択肢とは | 政治・経済・投資 | 東洋経済オンライン",
